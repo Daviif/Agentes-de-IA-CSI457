@@ -84,8 +84,8 @@ Passo 1: temperatura = 28.0°C | ação = ligar e resfriar ambiente | sistema = 
 Passo 2: temperatura = 27.0°C | ação = resfriar ambiente | sistema = ON
 Passo 3: temperatura = 26.0°C | ação = resfriar ambiente | sistema = ON
 Passo 4: temperatura = 25.0°C | ação = resfriar ambiente | sistema = ON
-Passo 5: temperatura = 24.0°C | ação = desligar | sistema = OFF
+Passo 5: temperatura = 24.0°C | ação = desligar | sistema = ON
 
-Estado final: Temperatura: 24.0°C, Ar Condicionado: Desligado
+Estado final: Temperatura: 24.0°C, Ar Condicionado: Ligado
 Total de percepções registradas: 5
 ```

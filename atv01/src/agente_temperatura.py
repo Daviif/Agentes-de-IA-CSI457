@@ -2,6 +2,7 @@
 TEMP_MIN = 20.0
 TEMP_MAX = 24.0
 OSCILAR = 0.5
+TEMPO_PROLONGADO_IDEAL = 3
 
 #Definido a classe Ambiente e AgenteTemperatura para simular o controle de temperatura
 class Ambiente:
@@ -17,6 +18,7 @@ class AgenteTemperatura:
     def __init__(self):
         self.historico_percepcoes = []
         self.ultima_acao = None
+        self.tempo_ideal_consecutivo = 0
 
     def perceber(self, ambiente):
         percepcao = {
@@ -25,6 +27,7 @@ class AgenteTemperatura:
             "abaixo_da_faixa":  ambiente.temperatura < TEMP_MIN,
             "acima_da_faixa":   ambiente.temperatura > TEMP_MAX,
             "na_faixa_ideal":   TEMP_MIN <= ambiente.temperatura <= TEMP_MAX,
+            "na_faixa_estavel": (TEMP_MIN + OSCILAR) <= ambiente.temperatura <= (TEMP_MAX - OSCILAR),
         }
         self.historico_percepcoes.append(percepcao)
         return percepcao
@@ -32,23 +35,42 @@ class AgenteTemperatura:
     def decidir(self, percepcao):
         ligado = percepcao["ligado"]
  
-        # Regra 1 e 2 — fora da faixa e sistema desligado: ligar
+        # Fora da faixa alta: resfriar (ligando quando necessário)
         if percepcao["acima_da_faixa"]:
+            self.tempo_ideal_consecutivo = 0
             if not ligado:
                 return "ligar e resfriar ambiente"
             return "resfriar ambiente"
 
+        # Fora da faixa baixa: esquentar (ligando quando necessário)
         if percepcao["abaixo_da_faixa"]:
+            self.tempo_ideal_consecutivo = 0
             if not ligado:
                 return "ligar e esquentar o ambiente"
             return "esquentar o ambiente"
         
-        # Regra 3 — dentro da faixa e sistema ligado: desligar (economizar energia)
-        if ligado and percepcao["na_faixa_ideal"]:
-            return "desligar"
- 
-        # Regra 4 — manter estado atual
-        return "manter"
+        # Na faixa ideal com AC ligado: manter temperatura;
+        # se permanecer por tempo prolongado na faixa estável, emitir alerta e desligar.
+        if not ligado and percepcao["na_faixa_ideal"]:
+            if percepcao["na_faixa_estavel"]:
+                self.tempo_ideal_consecutivo += 1
+            else:
+                self.tempo_ideal_consecutivo = 0
+
+            if self.tempo_ideal_consecutivo >= TEMPO_PROLONGADO_IDEAL:
+                self.tempo_ideal_consecutivo = 0
+                return "emitir alerta e desligar ar condicionado"
+
+            return "manter temperatura do ambiente"
+
+        # Na faixa ideal com AC desligado: nenhuma ação (não ligar)
+        if percepcao["na_faixa_ideal"] and not ligado:
+            self.tempo_ideal_consecutivo = 0
+            return "nenhuma ação (não ligar)"
+        
+        # Segurança: mantém estado atual caso apareça algum estado não previsto.
+        self.tempo_ideal_consecutivo = 0
+        return "manter temperatura do ambiente"
 
     def agir(self, ambiente):
         percepcao = self.perceber(ambiente)
