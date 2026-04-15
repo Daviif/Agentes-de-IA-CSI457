@@ -34,8 +34,15 @@ class AgenteTemperatura:
 
         self.ac_ligado = False
         self.tempo_espera_restante = 0
-        self.TEMPO_MAX_ESPERA = 10
+        self.TEMPO_MIN_ESPERA = 1
+        self.TEMPO_MAX_ESPERA = 8
+        self.JANELA_TAXAS = 5
+        self.MARGEM_DESLIGAMENTO = 0.1
+        self.tempo_min_ligado = 3
+        self.tempo_min_desligado = 3
+        self.contador_estado = 0
         self.historico_leituras = []
+        self.limite_critico = self.Td + 5
 
         self.taxa_r = []
         self.taxa_e = []
@@ -63,10 +70,12 @@ class AgenteTemperatura:
                 taxa = (self.T_inicio_episodio - Ta) / delta_t
                 if taxa > 0:
                     self.taxa_r.append(taxa)
+                    self.taxa_r = self.taxa_r[-self.JANELA_TAXAS:]
             elif not self.ac_ligado and Ta > self.T_inicio_episodio:
                 taxa = (Ta - self.T_inicio_episodio) / delta_t
                 if taxa > 0:
                     self.taxa_e.append(taxa)
+                    self.taxa_e = self.taxa_e[-self.JANELA_TAXAS:]
         
         self.T_inicio_episodio = Ta
         self.passos_episodio = 0
@@ -96,11 +105,37 @@ class AgenteTemperatura:
         
         Ta = percepcao["Ta"]
         L = self.ligar_limite
+        limite_desligar = self.desligar_limite + self.MARGEM_DESLIGAMENTO
+        pode_ligar = (not self.ac_ligado) and (self.contador_estado >= self.tempo_min_desligado)
+        pode_desligar = self.ac_ligado and (self.contador_estado >= self.tempo_min_ligado)
+
+        if Ta >= self.limite_critico:
+        if not self.ac_ligado:
+            self.ac_ligado = True
+            self.contador_estado = 0
+            return "ligar emergencia"
+        return "manter resfriando (emergencia)"
+
+        # Respeita tempo mínimo ON antes de desligar.
+        if self.ac_ligado and Ta <= limite_desligar:
+            if pode_desligar:
+                self.ac_ligado = False
+                self.contador_estado = 0
+                self.tempo_espera_restante = 0 # CORREÇÃO: Resetar espera ao mudar de estado
+                return "desligado"
+            return "manter resfriando (min ON)"
+
+        # Deadband: evita micro-comutação quando perto da temperatura alvo.
+        if (self.Td - self.deadband) <= Ta <= (self.Td + self.deadband):
+            return "manter (deadband)"
 
         # Regra 7: Ligar se exceder o limite L
         if Ta > L:
             if not self.ac_ligado:
+                if not pode_ligar:
+                    return "manter (min OFF)"
                 self.ac_ligado = True
+                self.contador_estado = 0
                 acao = "ligar e resfriar"
             else:
                 acao = "manter resfriando"
@@ -109,21 +144,15 @@ class AgenteTemperatura:
             r_desc = sum(self.taxa_r)/len(self.taxa_r) if self.taxa_r else None
             espera = math.ceil((Ta - self.Td) / r_desc) if r_desc else math.ceil(self.k * (Ta - self.Td))
             
-            self.tempo_espera_restante = min(max(0, espera), self.TEMPO_MAX_ESPERA)
+            self.tempo_espera_restante = min(max(self.TEMPO_MIN_ESPERA, espera), self.TEMPO_MAX_ESPERA)
             return acao
-            
-        # Regra 9: Desligar usando limiar inferior (histerese)
-        if self.ac_ligado and Ta <= self.desligar_limite:
-            self.ac_ligado = False
-            self.tempo_espera_restante = 0 # CORREÇÃO: Resetar espera ao mudar de estado
-            return "desligado"
 
         # Regra 10: Espera durante a elevação (AC desligado)
         if not self.ac_ligado:
             if Ta < self.Td: # Se ainda está abaixo da meta, estima quanto tempo leva para subir
                 r_elev = sum(self.taxa_e)/len(self.taxa_e) if self.taxa_e else None
                 espera = math.ceil((self.Td - Ta) / r_elev) if r_elev else math.ceil(self.k * (self.Td - Ta))
-                self.tempo_espera_restante = min(max(0, espera), self.TEMPO_MAX_ESPERA)
+                self.tempo_espera_restante = min(max(self.TEMPO_MIN_ESPERA, espera), self.TEMPO_MAX_ESPERA)
             else:
                 # Se está acima da meta mas abaixo do limite L, checa com frequência máxima
                 self.tempo_espera_restante = 0 
@@ -136,6 +165,7 @@ class AgenteTemperatura:
         acao = self.decidir(percepcao)
  
         ambiente.ligado = self.ac_ligado
+        self.contador_estado += 1
         return acao
 
 def executar_cenario(nome: str, sequencia_temperaturas: list[float]):
@@ -185,20 +215,22 @@ def executar_cenario_dinamico(
         estado = "ON" if ambiente.ligado else "OFF"
         print(
             f"  t={t:02d} | {str(ambiente):44s} | "
-            f"ação={acao:22s} | espera={agente.tempo_espera_restante:2d}"
+            f"ação={acao:22s} | espera={agente.tempo_espera_restante:2d} | "
+            f"custo={agente.calcular_custo(ambiente.temperatura):.2f}"
         )
 
     print(f"\n  Estado final        : {ambiente}")
     print(f"  Leituras armazenadas: {len(agente.historico_leituras)}")
     print(f"  taxa_r aprendidas   : {[round(t,3) for t in agente.taxa_r]}")
     print(f"  taxa_e aprendidas   : {[round(t,3) for t in agente.taxa_e]}")
+    
  
 # ─── Parte 3 — Cenários de Teste ─────────────────────────────────────────────
  
 if __name__ == "__main__":
  
     print("\n" + "=" * 60)
-    print("  CSI457 — Agente de Controle de Temperatura (v2)")
+    print("  CSI457 — Agente de Controle de Temperatura (v1)")
     print("  Parte 3: Execução dos Cenários de Teste")
     print("=" * 60)
  
