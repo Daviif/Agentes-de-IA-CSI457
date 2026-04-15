@@ -1,4 +1,5 @@
-#Temperatura Máxima, Minima e Oscilação
+# v0 do agente
+# #Temperatura Máxima, Minima e Oscilação
 TEMP_MIN = 20.0
 TEMP_MAX = 24.0
 OSCILAR = 0.5
@@ -51,7 +52,7 @@ class AgenteTemperatura:
         
         # Na faixa ideal com AC ligado: manter temperatura;
         # se permanecer por tempo prolongado na faixa estável, emitir alerta e desligar.
-        if not ligado and percepcao["na_faixa_ideal"]:
+        if ligado and percepcao["na_faixa_ideal"]:
             if percepcao["na_faixa_estavel"]:
                 self.tempo_ideal_consecutivo += 1
             else:
