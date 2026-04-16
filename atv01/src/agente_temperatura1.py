@@ -41,6 +41,7 @@ class AgenteTemperatura:
         self.tempo_min_ligado = 3
         self.tempo_min_desligado = 3
         self.contador_estado = 0
+        self.deadband = 0.3
         self.historico_leituras = []
         self.limite_critico = self.Td + 5
 
@@ -110,11 +111,11 @@ class AgenteTemperatura:
         pode_desligar = self.ac_ligado and (self.contador_estado >= self.tempo_min_ligado)
 
         if Ta >= self.limite_critico:
-        if not self.ac_ligado:
-            self.ac_ligado = True
-            self.contador_estado = 0
-            return "ligar emergencia"
-        return "manter resfriando (emergencia)"
+            if not self.ac_ligado:
+                self.ac_ligado = True
+                self.contador_estado = 0
+                return "ligar emergencia"
+            return "manter resfriando (emergencia)"
 
         # Respeita tempo mínimo ON antes de desligar.
         if self.ac_ligado and Ta <= limite_desligar:
@@ -251,17 +252,18 @@ if __name__ == "__main__":
         nome="Cenário 3 — Resfriamento gradual",
         sequencia_temperaturas=[28, 27, 26, 25, 24]
     )
-    
+
+    # Cenário 4 — Ambiente estável
     executar_cenario_dinamico(
-        "Cenário 3 — Ambiente quente",
+        "Cenário 4 — Ambiente quente",
         temp_inicial=30.0,
         passos=30,
         temp_desejada=23.0,
     )
 
-    # Cenário 4 — Ambiente estável
+    # Cenário 5 — Ambiente Moderado
     executar_cenario_dinamico(
-        "Cenário 4 — Ambiente moderado",
+        "Cenário 5 — Ambiente moderado",
         temp_inicial=25.0,
         passos=30,
         temp_desejada=24.0,
