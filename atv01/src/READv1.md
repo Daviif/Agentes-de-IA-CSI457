@@ -187,3 +187,84 @@ Leituras armazenadas: 19
 taxa_r aprendidas   : [0.3, 0.3, 0.3, 0.3]
 taxa_e aprendidas   : [0.289, 0.274, 0.321, 0.305, 0.289]
 ```
+
+# Parte 4 — Análise Crítica
+
+
+## 1. O agente implementado corresponde exatamente à especificação?
+
+
+Sim. Todas as 7 ações (A1-A7) estão implementadas conforme esperado. A histerese, deadband, tempos mínimos e aprendizado de taxas seguem a especificação.
+
+
+## 2. O uso de IA alterou alguma decisão originalmente planejada?
+
+
+Sim, três alterações:
+
+
+- Ordem de verificações: priorizar crítico (T ≥ 28°C) antes de outras decisões.
+- Cálculo de espera: adicionar limites min/max (1-8 passos) e fallback com k * (Ta - Td).
+- Bug corrigido: resetar tempo_espera ao mudar estado do AC.
+
+
+## 3. O agente pode ser considerado racional?
+
+
+Sim. Satisfaz todos os 7 critérios:
+
+
+- Mantém T próxima à desejada via função custo J = α|Ta - Td| + β·C_ligado.
+- Evita chaveamento frequente.
+- Minimiza energia com penalidade β = 2.0 no custo.
+- Respeita tempos mínimos ligado/desligado.
+
+ Estima espera usando histórico de taxas.
+- Prioriza emergência (T ≥ 28°C).
+- Aplica custo de controle em cada passo.
+
+
+## 4. Principais limitações
+
+
+- Limite crítico fixo em 28°C.
+- Modelo ambiental simplista .
+- Fallback k = 0.5 é heurístico, não físico.
+- Sem adaptação dinâmica se ambiente mudar.
+- Sem previsão de overshoot.
+- Janela de taxas fixa (5 últimas) com pesos iguais.
+- Sem histerese na faixa crítica.
+
+
+## 5. Melhorias possíveis
+
+
+- Limite crítico adaptativo: limite_critico = Td + 5 + max(0, |Td - 20|).
+- Ponderação exponencial nas taxas (recentes com peso maior).
+- Validar taxas antes de aprender (rejeitar < 0 ou > 2.0°C/passo).
+- Detectar mudança de ambiente (variância alta nas taxas).
+- Prever overshoot no cálculo de espera.
+- Alertar se delta_T for anormalmente alta.
+- Testar com T_externa variável (20-40°C).
+
+
+# Parte 5 — Uso de Inteligência Artificial
+
+
+## Como a IA foi utilizada
+
+
+- Estruturação: traduziu regras textuais em if-elif-else; sugeriu split em perceber(), decidir(), agir().
+- Implementação: propôs math.ceil() para espera e min/max para limites.
+- Debugging: identificou bug de espera não resetada ao mudar estado (linha 125).
+- Documentação: sugeriu print() tabulado e comentários em pontos críticos.
+
+
+## Em quais etapas ajudou mais
+
+
+- Debugging: evitou comportamento irracional em mudanças de estado.
+- Testes: garantiu cobertura com casos dinâmicos (Cenários 4-5).
+- Estrutura: organizou ordem segura de verificações (crítico → desligar → deadband → ligar → espera).
+- Média "móvel", a média das taxas era feita registrando todas as taxas. Foi implementado somente as ultimas 5 taxas registradas para a média
+
