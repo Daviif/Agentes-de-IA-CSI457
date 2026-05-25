@@ -3,7 +3,7 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from labirinto import LabirintoBusca
+from labirinto import LabirintoBusca, LabirintoComColetas, Labirinto
 from exibir import imprimir_labirinto
 from buscas.classicas.bfs import bfs
 from buscas.classicas.dfs import dfs
@@ -17,6 +17,7 @@ MAPAS_PRONTOS = {
     '1': os.path.join(BASE, 'mapas', 'lab1.txt'),
     '2': os.path.join(BASE, 'mapas', 'lab2.txt'),
     '3': os.path.join(BASE, 'mapas', 'lab3.txt'),
+    '4': os.path.join(BASE, 'mapas', 'lab4.txt'),
 }
 
 ALGORITMOS_CLASSICOS = [
@@ -33,6 +34,7 @@ def escolher_mapa() -> str:
     print('  1 - lab1 (simples, sem coletas)')
     print('  2 - lab2 (com pontos de coleta)')
     print('  3 - lab3 (serpentino, maior)')
+    print('  4 - lab4 (muito complexo, para teste de performance)')
     print('  0 - Inserir caminho manualmente')
     opcao = input('Opção: ').strip()
     if opcao in MAPAS_PRONTOS:
@@ -45,6 +47,7 @@ def escolher_mapa() -> str:
 
 
 def busca_classica(lab: LabirintoBusca, nome_arquivo: str = 'labirinto'):
+    lab_problema: Labirinto = LabirintoComColetas(lab) if lab.coletas else lab
 
     print(f'\n{"="*60}')
     print(f'Mapa: {nome_arquivo}  ({lab.altura}L x {lab.largura}C)')
@@ -58,7 +61,7 @@ def busca_classica(lab: LabirintoBusca, nome_arquivo: str = 'labirinto'):
 
     resultados = []
     for nome, func in ALGORITMOS_CLASSICOS:
-        res = func(lab)
+        res = func(lab_problema)
         print(fmt.format(
             nome,
             str(res.encontrado),

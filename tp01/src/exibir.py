@@ -2,9 +2,17 @@ from labirinto import LabirintoBusca, ResultadoBusca
 from typing import Optional
 
 
+def _pos(estado):
+    """Extrai (row, col) de estado simples ou estendido ((row,col), frozenset)."""
+    return estado[0] if isinstance(estado[0], tuple) else estado
+
+
 def imprimir_labirinto(lab: LabirintoBusca, resultado: Optional[ResultadoBusca] = None, mostrar_explorados: bool = True):
-    caminho = set(resultado.caminho) if resultado and resultado.encontrado else set()
-    explorados = set(resultado.estados_explorados) if resultado and mostrar_explorados else set()
+    caminho = {_pos(e) for e in resultado.caminho} if resultado and resultado.encontrado else set()
+    explorados = {_pos(e) for e in resultado.estados_explorados} if resultado and mostrar_explorados else set()
+
+    inicio_pos = _pos(lab.inicio)
+    objetivo_pos = _pos(lab.objetivo)
 
     print()
     for i in range(lab.altura):
@@ -12,9 +20,9 @@ def imprimir_labirinto(lab: LabirintoBusca, resultado: Optional[ResultadoBusca] 
             estado = (i, j)
             if lab.paredes[i][j]:
                 print('█', end='')
-            elif estado == lab.inicio:
+            elif estado == inicio_pos:
                 print('A', end='')
-            elif estado == lab.objetivo:
+            elif estado == objetivo_pos:
                 print('B', end='')
             elif estado in lab.coletas:
                 print('C', end='')

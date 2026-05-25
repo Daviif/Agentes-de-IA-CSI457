@@ -4,10 +4,10 @@ import os
 from typing import List, Set
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
-from labirinto import LabirintoBusca, ResultadoBusca, No, Estado
+from labirinto import Labirinto, ResultadoBusca, No, Estado
 
 
-def dfs(lab: LabirintoBusca) -> ResultadoBusca:
+def dfs(lab: Labirinto) -> ResultadoBusca:
     t0 = time.perf_counter()
     inicio = No(lab.inicio)
     fronteira = [inicio]
@@ -26,7 +26,7 @@ def dfs(lab: LabirintoBusca) -> ResultadoBusca:
         ordem_explorados.append(no.estado)
 
         if no.estado == lab.objetivo:
-            caminho, acoes = LabirintoBusca.reconstruir(no)
+            caminho, acoes = lab.reconstruir(no)
             return ResultadoBusca(
                 'Busca em Profundidade (DFS)', True,
                 caminho, acoes, nos_explorados, nos_expandidos,
