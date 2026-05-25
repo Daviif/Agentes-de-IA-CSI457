@@ -15,6 +15,7 @@ MAPAS = {
     '2': (os.path.join(BASE, 'mapas', 'lab2.txt'), 'Lab 2 — coletas'),
     '3': (os.path.join(BASE, 'mapas', 'lab3.txt'), 'Lab 3 — serpentino'),
     '4': (os.path.join(BASE, 'mapas', 'lab4.txt'), 'Lab 4 — complexo'),
+    '5': (os.path.join(BASE, 'mapas', 'lab5.txt'), 'Lab 5 — teste de performance'),
 }
 
 
