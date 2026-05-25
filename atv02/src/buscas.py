@@ -208,25 +208,33 @@ class LabirintoBusca:
             lambda no: no.g + peso * self.h(no.estado)
         )
 
-    def busca_idastar(self) -> ResultadoBusca:
-        ordem_explorados: List[Estado] = []
+    def busca_idastar(self, max_iteracoes: int = 10_000) -> ResultadoBusca:
+
         nos_explorados = 0
         nos_expandidos = 0
-        limite = self.h(self.inicio)
-        inicio = No(self.inicio, g=0.0)
+        ordem_explorados: List[Estado] = []
 
-        def dfs_limitado(no: No, limite_atual: float, caminho_atual: Set[Estado]):
+        inicio = No(self.inicio, g=0.0)
+        limite = self.h(self.inicio)
+
+        def dfs_limitado(
+            no: No,
+            limite_atual: float,
+            caminho_atual: Set[Estado],
+            melhor_g_iteracao: Dict[Estado, float]
+        ):
             nonlocal nos_explorados, nos_expandidos, ordem_explorados
 
             nos_explorados += 1
             ordem_explorados.append(no.estado)
+
             f = no.g + self.h(no.estado)
 
             if f > limite_atual:
                 return f, None
 
             if no.estado == self.objetivo:
-                return 'FOUND', no
+                return "FOUND", no
 
             nos_expandidos += 1
             menor_proximo_limite = math.inf
@@ -240,26 +248,76 @@ class LabirintoBusca:
                 if estado in caminho_atual:
                     continue
 
-                filho = No(estado=estado, pai=no, acao=acao, g=no.g + custo)
+                novo_g = no.g + custo
+
+                # Evita revisitar o mesmo estado, na mesma iteração,
+                # por um caminho igual ou pior.
+                if novo_g >= melhor_g_iteracao.get(estado, math.inf):
+                    continue
+
+                melhor_g_iteracao[estado] = novo_g
+
+                filho = No(
+                    estado=estado,
+                    pai=no,
+                    acao=acao,
+                    g=novo_g
+                )
+
                 caminho_atual.add(estado)
-                temp, solucao = dfs_limitado(filho, limite_atual, caminho_atual)
+                temp, solucao = dfs_limitado(
+                    filho,
+                    limite_atual,
+                    caminho_atual,
+                    melhor_g_iteracao
+                )
                 caminho_atual.remove(estado)
 
-                if temp == 'FOUND':
-                    return 'FOUND', solucao
+                if temp == "FOUND":
+                    return "FOUND", solucao
+
                 if temp < menor_proximo_limite:
                     menor_proximo_limite = temp
 
             return menor_proximo_limite, None
 
-        while True:
-            temp, solucao = dfs_limitado(inicio, limite, {self.inicio})
+        for _ in range(max_iteracoes):
+            melhor_g_iteracao = {self.inicio: 0.0}
 
-            if temp == 'FOUND':
+            temp, solucao = dfs_limitado(
+                inicio,
+                limite,
+                {self.inicio},
+                melhor_g_iteracao
+            )
+
+            if temp == "FOUND":
                 caminho, acoes = self.reconstruir(solucao)
-                return ResultadoBusca('IDA*', True, caminho, acoes, nos_explorados, nos_expandidos, ordem_explorados)
+                return ResultadoBusca(
+                    "IDA*",
+                    True,
+                    caminho,
+                    acoes,
+                    nos_explorados,
+                    nos_expandidos,
+                    ordem_explorados
+                )
 
             if temp == math.inf:
-                return ResultadoBusca('IDA*', False, [], [], nos_explorados, nos_expandidos, ordem_explorados)
+                return ResultadoBusca(
+                    "IDA*",
+                    False,
+                    [],
+                    [],
+                    nos_explorados,
+                    nos_expandidos,
+                    ordem_explorados
+                )
 
             limite = temp
+
+        raise RuntimeError(
+            "IDA* interrompido: número máximo de iterações atingido. "
+            "O labirinto pode ser muito grande, muito aberto, sem solução, "
+            "ou a heurística pode estar pouco informativa."
+        )
