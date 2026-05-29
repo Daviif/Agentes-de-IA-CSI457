@@ -115,6 +115,88 @@ class LabirintoBusca:
         return estados, acoes
 
 
+@dataclass
+class ResultadoBuscaOnline:
+    algoritmo: str
+    encontrado: bool
+    movimentos_totais: int
+    custo_real: float
+    celulas_reveladas: int
+    celulas_revisitadas: int
+    replanejamentos: int
+    custo_otimo_offline: float
+    caminho_percorrido: List[Estado]
+    tempo_ms: float = 0.0
+
+    @property
+    def razao_online_offline(self) -> Optional[float]:
+        if self.custo_otimo_offline > 0 and self.encontrado:
+            return round(self.custo_real / self.custo_otimo_offline, 3)
+        return None
+
+
+class LabirintoOnline:
+    """
+    Simula um agente em labirinto desconhecido.
+    O mapa real é oculto; o agente constrói mapa interno via percepção.
+    mapa interno: None=desconhecido, False=livre, True=parede.
+    """
+
+    def __init__(self, lab_real: 'LabirintoBusca', raio: int = 1):
+        self._real = lab_real
+        self.raio = raio
+        self.altura = lab_real.altura
+        self.largura = lab_real.largura
+        self.inicio = lab_real.inicio
+        self.objetivo = lab_real.objetivo
+        self.mapa: List[List[Optional[bool]]] = [
+            [None] * self.largura for _ in range(self.altura)
+        ]
+        r, c = self.inicio
+        self.mapa[r][c] = False
+
+    def perceber(self, pos: Estado):
+        """Revela células dentro do raio (distância de Manhattan).
+        Retorna (novos_livres, novas_paredes) como listas de Estado."""
+        r, c = pos
+        novos_livres: List[Estado] = []
+        novas_paredes: List[Estado] = []
+        for dr in range(-self.raio, self.raio + 1):
+            for dc in range(-self.raio, self.raio + 1):
+                if abs(dr) + abs(dc) <= self.raio:
+                    nr, nc = r + dr, c + dc
+                    if 0 <= nr < self.altura and 0 <= nc < self.largura:
+                        if self.mapa[nr][nc] is None:
+                            eh_parede = self._real.paredes[nr][nc]
+                            self.mapa[nr][nc] = eh_parede
+                            if eh_parede:
+                                novas_paredes.append((nr, nc))
+                            else:
+                                novos_livres.append((nr, nc))
+        return novos_livres, novas_paredes
+
+    def mover(self, pos: Estado, acao: str) -> Optional[Estado]:
+        """Move no mapa real. Retorna nova posição ou None se bloqueado."""
+        r, c = pos
+        d = {'up': (-1, 0), 'down': (1, 0), 'left': (0, -1), 'right': (0, 1)}[acao]
+        nr, nc = r + d[0], c + d[1]
+        if 0 <= nr < self.altura and 0 <= nc < self.largura and not self._real.paredes[nr][nc]:
+            return (nr, nc)
+        return None
+
+    def vizinhos_livres_internos(self, pos: Estado):
+        """Vizinhos que não são paredes conhecidas (livres ou desconhecidos)."""
+        r, c = pos
+        for acao, (nr, nc) in [('up', (r-1, c)), ('down', (r+1, c)),
+                                ('left', (r, c-1)), ('right', (r, c+1))]:
+            if 0 <= nr < self.altura and 0 <= nc < self.largura:
+                if self.mapa[nr][nc] is not True:
+                    yield acao, (nr, nc), 1.0
+
+    def h_interna(self, pos: Estado) -> float:
+        return abs(pos[0] - self.objetivo[0]) + abs(pos[1] - self.objetivo[1])
+
+
 class LabirintoComColetas:
     """
     Adapta LabirintoBusca para busca com coletas obrigatórias.

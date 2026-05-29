@@ -3,13 +3,15 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from labirinto import LabirintoBusca, LabirintoComColetas, Labirinto
+from labirinto import LabirintoBusca, LabirintoComColetas, LabirintoOnline, Labirinto
 from exibir import imprimir_labirinto
 from buscas.classicas.bfs import bfs
 from buscas.classicas.dfs import dfs
 from buscas.classicas.ucs import ucs
 from buscas.classicas.gulosa import gulosa
 from buscas.classicas.a_estrela import a_estrela
+from buscas.online.replanning_a_estrela import replanning_a_estrela
+from buscas.online.online_dfs import online_dfs
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -26,6 +28,11 @@ ALGORITMOS_CLASSICOS = [
     ('UCS',    ucs),
     ('Gulosa', gulosa),
     ('A*',     a_estrela),
+]
+
+ALGORITMOS_ONLINE = [
+    ('Replanning A*', replanning_a_estrela),
+    ('Online DFS',    online_dfs),
 ]
 
 
@@ -79,6 +86,44 @@ def busca_classica(lab: LabirintoBusca, nome_arquivo: str = 'labirinto'):
         imprimir_labirinto(lab, resultado=res, mostrar_explorados=True)
 
 
+def busca_online(lab: LabirintoBusca, nome_arquivo: str = 'labirinto'):
+    # Calcula custo ótimo offline com A* no mapa completo
+    lab_problema: Labirinto = LabirintoComColetas(lab) if lab.coletas else lab
+    res_offline = a_estrela(lab_problema)
+    custo_otimo = res_offline.custo_total if res_offline.encontrado else 0.0
+
+    print(f'\n{"="*60}')
+    print(f'Mapa: {nome_arquivo}  ({lab.altura}L x {lab.largura}C)')
+    print(f'Início: {lab.inicio}   Objetivo: {lab.objetivo}')
+    print(f'Custo ótimo offline (A*): {custo_otimo:.0f}')
+    print(f'{"="*60}')
+
+    fmt = '{:<16} {:<8} {:<8} {:<10} {:<10} {:<12} {:<12} {:<8}'
+    print(fmt.format('Algoritmo', 'Sucesso', 'Mov.', 'Custo', 'Reveladas',
+                     'Revisitadas', 'Tempo(ms)', 'Razão'))
+    print('-' * 90)
+
+    for nome, func in ALGORITMOS_ONLINE:
+        lab_online = LabirintoOnline(lab)
+        res = func(lab_online)
+        res.custo_otimo_offline = custo_otimo
+        razao = f'{res.razao_online_offline:.3f}' if res.razao_online_offline else 'N/A'
+        print(fmt.format(
+            nome,
+            str(res.encontrado),
+            res.movimentos_totais,
+            f'{res.custo_real:.0f}',
+            res.celulas_reveladas,
+            res.celulas_revisitadas,
+            f'{res.tempo_ms:.4f}',
+            razao,
+        ))
+
+    print(f'\n  Razão online/offline = custo percorrido / custo ótimo offline')
+    print(f'  Razão = 1.0 → agente igualou o desempenho offline')
+    print(f'  Razão > 1.0 → custo extra por desconhecer o ambiente')
+
+
 def main():
     caminho = escolher_mapa()
     lab = LabirintoBusca(caminho)
@@ -90,7 +135,7 @@ def main():
     print('\nTipo de busca:')
     print('  1 - Busca Clássica (BFS, DFS, UCS, Gulosa, A*)')
     print('  2 - Busca Local    (em breve)')
-    print('  3 - Busca Online   (em breve)')
+    print('  3 - Busca Online   (Replanning A*, Online DFS)')
     tipo = input('Opção: ').strip()
 
     if tipo == '1':
@@ -98,7 +143,7 @@ def main():
     elif tipo == '2':
         print('\nBusca Local ainda não implementada (Semana 2).')
     elif tipo == '3':
-        print('\nBusca Online ainda não implementada (Semana 3).')
+        busca_online(lab, nome_arquivo)
     else:
         print('Opção inválida.')
 
