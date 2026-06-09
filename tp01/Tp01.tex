@@ -1,0 +1,359 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+
+\title{\textbf{Relatório Técnico Final — TP01} \\ \Large Agentes de Busca em Ambientes de Labirinto}
+
+\author{
+    \textbf{Integrantes:} \\
+    Davi Emílio de Paula Fonseca - 24.1.8158\\
+    João Vitor Cota Silva - 24.1.8156 \\
+    Thársos Gabriel Couto Fernandes - 24.1.8059\\[0.5cm]
+    \textbf{Disciplina:} CSI457 — Agentes de Inteligência Artificial \\
+    \textbf{Instituição:} Universidade Federal de Ouro Preto (UFOP)
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+Este trabalho prático detalha a implementação de um sistema de agentes inteligentes capazes de resolver problemas de navegação em labirintos, utilizando três abordagens clássicas da Inteligência Artificial. Na primeira semana, abordou-se a Busca Clássica, onde o mapa é completamente conhecido antes da execução, permitindo ao agente planejar o caminho inteiro antes de se mover por meio dos algoritmos BFS, DFS, UCS, Busca Gulosa e A$^*$.
+\\
+
+Na segunda semana, o foco foi a Busca Local, em que o agente otimiza a ordem de visitação de pontos de coleta sem manter uma fronteira global, utilizando Hill-Climbing, Simulated Annealing e Algoritmo Genético, tratando o problema como otimização combinatorial sobre permutações. Por fim, na terceira semana, implementou-se a Busca Online, um cenário em que o mapa é completamente desconhecido \textit{a priori}. O agente percebe apenas as células adjacentes a cada passo e constrói seu modelo interno do ambiente durante a execução, utilizando Replanning A$^*$ e Online DFS.
+\\
+
+O projeto reutiliza e estende componentes desenvolvidos na atividade anterior (ATV02). Os algoritmos de busca clássica foram adaptados de métodos de classe para funções independentes, adicionando suporte a estados estendidos para lidar com coletas obrigatórias, representação por permutação para a busca local e percepção parcial de raio 1 para a busca online. O ambiente de simulação é composto por grades bidimensionais com paredes (\#), células livres ( ), ponto inicial (A), objetivo (B) e pontos de coleta opcionais (C). Considerou-se o custo de cada movimento como unitário, com o agente executando os quatro movimentos ortogonais básicos.
+
+\section{Modelagem PEAS}
+A modelagem PEAS (Performance, Environment, Actuators, Sensors) foi adaptada para refletir as diferentes naturezas dos três cenários abordados.
+
+\subsection{Busca Clássica (Semana 1)}
+Na \textbf{Busca Clássica}, a performance é avaliada pela capacidade de encontrar a solução, minimizando o custo do caminho (número de passos), os nós expandidos, o tempo de execução em milissegundos e o tamanho máximo da fronteira. O ambiente é totalmente observável, determinístico, estático, discreto e de agente único. Os atuadores permitem movimentos ortogonais, e ações inválidas (como bater em paredes) são ignoradas pela função de transição. Os sensores captam o mapa completo antes do início da busca. Trata-se de um agente baseado em objetivos com modelo interno completo, cuja estratégia é o planejamento prévio total.
+
+\subsection{Busca Local (Semana 2)}
+Para a \textbf{Busca Local}, a medida de performance muda para a qualidade da solução, definida pela maximização de $f(s) = -h(s)$, onde $h(s)$ é a maior distância de Manhattan até os destinos restantes, além de avaliar a convergência e a taxa de escape de ótimos locais. O ambiente permanece o mesmo, mas o agente o trata como uma superfície de fitness. Os atuadores operam logicamente sobre a ordem de visitação das coletas (permutações). Os sensores utilizam distâncias pré-computadas entre os pontos e a temperatura atual no caso do Simulated Annealing, operando com uma memória de $\mathcal{O}(1)$. O agente passa a ser baseado em utilidade.
+
+\subsection{Busca Online (Semana 3)}
+Na \textbf{Busca Online}, o desempenho engloba o sucesso em encontrar o objetivo, o custo total percorrido (incluindo backtracking), o número de replanejamentos, as células reveladas e a razão entre o custo online e o custo ótimo offline. O ambiente torna-se parcialmente observável, e o estado interno passa a ser $\hat{s} = (pos, \hat{M})$, onde $\hat{M}$ é o modelo interno construído. Os atuadores ganham a funcionalidade implícita de backtracking. Os sensores captam apenas as células adjacentes, percebendo elementos em um raio 1. Este é um agente baseado em objetivos com modelo interno parcial e incremental, intercalando percepção, atualização e ação passo a passo.
+\\
+
+Comparativamente, a memória exigida varia de $\mathcal{O}(b^d)$ na clássica para $\mathcal{O}(1)$ na local, e proporcional às células visitadas na online. Enquanto a clássica garante completude e otimalidade (a depender do algoritmo), a local sacrifica essas garantias em prol do processamento de permutações, e a online não garante o caminho ótimo na primeira travessia devido à falta de informação global.
+
+\section{Formulação Formal dos Problemas}
+Para todas as abordagens, o problema central de navegação é unificado e modelado pela tupla fundamental de decisão: $P = \langle S, A, T, s_0, G, c \rangle$.
+
+\subsection{Problema Simples — Semana 1A (sem coletas)}
+Neste cenário clássico, o agente busca apenas o destino final, lidando com um ambiente totalmente observável e determinístico.
+\begin{itemize}
+    \item \textbf{Espaço de Estados (S):} Representado por todas as coordenadas válidas da grade.
+    $$S = \{ (i,j) \mid 0 \le i < H, 0 \le j < W, \text{labirinto}[i][j] \neq \text{parede} \}$$
+    \item \textbf{Ações (A):} Os quatro movimentos ortogonais possíveis.
+    $$A = \{ \text{cima}, \text{baixo}, \text{esquerda}, \text{direita} \}$$
+    \item \textbf{Transição (T):} Determinística. Retorna a nova coordenada $(i,j)$ se o movimento for válido; caso aponte para uma parede ou borda, o movimento é ignorado.
+    \item \textbf{Estado Inicial ($s_0$):} As coordenadas do marcador inicial 'A'.
+    \item \textbf{Objetivo (G):} Alcançar as coordenadas do marcador 'B'.
+    \item \textbf{Custo (c):} Custo uniforme para qualquer ação realizada.
+    $$c(a) = 1, \forall a \in A$$
+\end{itemize}
+
+\subsection{Problema com Coletas — Semana 1B}
+Como a posição sozinha não determina se o agente já pegou os itens obrigatórios, o problema passa a exigir um estado estendido para registrar as coletas pendentes.
+\begin{itemize}
+    \item \textbf{Estado Estendido (S'):} A combinação da posição atual com o subconjunto de coletas que ainda faltam visitar. Sendo $C$ o conjunto total de coletas:
+    $$S' = \{ (pos, C_r) \mid pos \in S, C_r \subseteq C \}$$
+    \item \textbf{Estado Inicial ($s_0'$):} O agente começa na posição 'A' com todas as coletas pendentes.
+    $$s_0' = (pos_A, C)$$
+    \item \textbf{Objetivo (G'):} Chegar à posição 'B' com o conjunto de coletas pendentes vazio.
+    $$G' = \{ (pos_B, \emptyset) \}$$
+    \item \textbf{Transição (T'):} Ao mover para uma célula $pos'$, se ela for um ponto de coleta, ele é removido do conjunto.
+    $$T'((pos, C_r), a) = (pos', C_r \setminus \{pos'\})$$
+    \item \textbf{Heurística Admissível para A$^*$:} A maior distância de Manhattan entre a posição atual e qualquer destino que o agente ainda precise visitar.
+    $$h(pos, C_r) = \max \{ \text{manhattan}(pos, d) \mid d \in C_r \cup \{B\} \}$$
+\end{itemize}
+
+\subsection{Busca Local — Semana 2}
+Na busca local, a navegação passo a passo é abstraída e o foco muda para a otimização combinatorial: qual é a melhor ordem para visitar todos os pontos?
+\begin{itemize}
+    \item \textbf{Representação do Estado:} Uma permutação matemática $\pi$ indicando a ordem em que as $k$ coletas são visitadas.
+    $$\pi = [c_{\pi(0)}, c_{\pi(1)}, \dots, c_{\pi(k-1)}]$$
+    \item \textbf{Função de Avaliação:} O algoritmo busca maximizar $f(\pi)$, o que equivale a minimizar o custo total do trajeto.
+    $$f(\pi) = -custo(\pi)$$
+    \item \textbf{Custo Total:} A soma das distâncias mínimas reais (pré-computadas) entre o início, as coletas em ordem, e o objetivo.
+    $$custo(\pi) = \text{dist}(A, c_{\pi(0)}) + \sum_{i=0}^{k-2} \text{dist}(c_{\pi(i)}, c_{\pi(i+1)}) + \text{dist}(c_{\pi(k-1)}, B)$$
+    \item \textbf{Vizinhança (Swap):} O conjunto de soluções vizinhas geradas pela troca de posição entre dois pontos na ordem de visitação.
+    $$N(\pi) = \{ \pi' \mid \pi' \text{ é } \pi \text{ com dois índices trocados} \}$$
+\end{itemize}
+
+\subsection{Busca Online — Semana 3}
+Sem o conhecimento prévio da planta do labirinto, o agente passa a carregar um modelo interno do mundo, que é atualizado dinamicamente.
+\begin{itemize}
+    \item \textbf{Estado Interno do Agente:} Uma composição entre a sua posição perfeitamente conhecida e a representação parcial do labirinto construída até o momento ($\hat{M}$).
+    $$\hat{s} = (pos, \hat{M})$$
+    \item \textbf{Percepção Local:} A cada passo, o agente recebe informações sobre o tipo de terreno (livre, parede, coleta) de todas as células diretamente adjacentes a ele.
+    $$\sigma(pos) = \{ (pos', \text{tipo}) \mid pos' \text{ é adjacente a } pos \}$$
+    \item \textbf{Atualização do Mapa:} O modelo interno cresce monotonamente a cada nova percepção, servindo de base para o replanejamento seguro.
+    $$\hat{M} \leftarrow \hat{M} \cup \sigma(pos)$$
+\end{itemize}
+
+\section{Descrição dos Algoritmos}
+\subsection{Busca Clássica}
+A implementação da \textbf{Busca Clássica} englobou cinco abordagens. O BFS, utilizando uma fila FIFO, demonstrou ser completo e ótimo para o cenário de custos uniformes, porém com alto consumo de memória. O DFS, baseado em pilha LIFO, explorou os caminhos mais profundos primeiro, sendo muito eficiente em memória, mas incapaz de garantir soluções ótimas. O UCS, usando uma min-heap pelo custo acumulado $g(n)$, comportou-se de forma semelhante ao BFS no domínio de custo unitário, garantindo otimalidade. A Busca Gulosa guiou-se unicamente pela heurística $h(n)$ (distância de Manhattan), sendo rápida na prática, mas sujeita a becos sem saída. O algoritmo A$^*$ equilibrou essas vertentes somando $f(n) = g(n) + h(n)$, garantindo otimalidade com o menor número possível de nós expandidos devido ao uso da heurística admissível.
+
+\subsection{Busca Local}
+A \textbf{Busca Local} foi abordada por três métodos. O Hill-Climbing (Steepest Ascent) com reinicializações aleatórias avalia todos os vizinhos por swap e assume a melhor melhoria imediata, parando ao atingir um ótimo local. O Simulated Annealing introduz uma probabilidade de aceitar soluções piores, guiada por uma temperatura inicial e uma taxa de resfriamento, permitindo escapar de mínimos locais. Por fim, o Algoritmo Genético trabalha evolutivamente com uma população de permutações, utilizando seleção por torneio, cruzamento por ordem (OX), mutação por swap e elitismo, sendo particularmente eficaz para instâncias de muitas coletas.
+\\
+
+\textbf{Justificativa da Vizinhança por Swap:} A vizinhança escolhida para a busca local foi a troca de dois elementos (swap) em vez de outras alternativas como inversão de subtrechos (2-opt) ou inserção de elemento. Essa escolha se justifica por três razões principais:
+\begin{enumerate}
+    \item \textbf{Custo computacional $\mathcal{O}(1)$:} Dado que as distâncias entre todos os pares (início, coletas, objetivo) são pré-computadas em uma tabela de distâncias, o custo de qualquer permutação é recalculável em tempo constante ao trocar dois índices, bastando atualizar apenas os dois segmentos afetados.
+    \item \textbf{Conectividade do espaço:} Qualquer permutação pode ser alcançada a partir de qualquer outra por uma sequência de swaps (o grupo simétrico $S_k$ é gerado por transposições). Isso garante que nenhuma solução fica inacessível.
+    \item \textbf{Tamanho de vizinhança controlado:} Para $k$ coletas, o swap gera exatamente $k(k-1)/2$ vizinhos. É um crescimento quadrático viável para $k \le 10$. A inversão de subtrechos geraria o mesmo número, mas com implementação mais complexa e sem ganho prático para as instâncias pequenas testadas.
+\end{enumerate}
+
+\subsection{Busca Online}
+A \textbf{Busca Online} utilizou o Replanning A$^*$ e o Online DFS. O Replanning mantém um plano de rota gerado no modelo mental do agente. Ao confrontar uma parede não prevista, o plano é descartado e o A$^*$ é reexecutado a partir da posição atual. O Online DFS dispensa heurísticas e mantém uma lista sistemática de ações não tentadas para cada coordenada; caso não haja saídas inéditas válidas, realiza o backtrack pelo caminho percorrido.
+
+\section{Metodologia Experimental}
+A experimentação foi conduzida em sete mapas com características distintas: o lab1 (9×9) para validação simples; o lab2 (21×31) com 6 coletas; o lab3 (13×13) em formato serpentino para forçar backtracking; o lab4 ($\sim$20×20) como ambiente complexo sem coletas; o lab5 (81×81) testando a escalabilidade; o lab6 (15×15) voltado para busca local com 6 coletas; e o lab7 (23×41), que é o mapa oculto do professor.
+\\
+
+\textbf{Formulação adotada na Semana 1.} Os experimentos de busca clássica utilizam a formulação de navegação pura: estado $= (linha, coluna)$, com objetivo único em B. Os pontos de coleta intermediários C presentes em mapas como lab2 são intencionalmente ignorados nesta etapa. O objetivo é isolar e comparar as propriedades intrínsecas de cada algoritmo — completude, otimalidade e complexidade de tempo e espaço — em um espaço de estados homogêneo. A otimização da ordem de visita dos pontos C, que exige modelagem combinatória com estado estendido (posição, conjunto de coletas visitadas), é tratada na Semana 2 como problema de busca local sobre permutações.
+\\
+
+As métricas englobaram sucesso, custo do caminho, tamanho do caminho, nós expandidos, explorados, tempo e fronteira máxima para a busca clássica. Na busca local, mensurou-se os custos melhor, pior e médio, a convergência por iterações e o número de reinicializações. Na busca online, coletou-se o total de movimentos, o custo percorrido, as células reveladas e revisitadas, o total de replanejamentos e a razão online/offline. A reprodutibilidade da busca local foi garantida pela fixação da semente aleatória.
+
+\section{Resultados Obtidos}
+Os experimentos foram conduzidos focando na avaliação de eficiência, otimalidade e escalabilidade. Abaixo, os dados quantitativos estão organizados por abordagem, acompanhados de suas principais conclusões (os gráficos correspondentes encontram-se na Seção 7).
+
+\subsection{Busca Clássica: Eficiência e Otimalidade}
+Nesta etapa, avaliamos os algoritmos em um ambiente simples (Lab1) e em um mapa de maior escala (Lab2), ambos com a formulação de navegação pura A$\rightarrow$B descrita na Seção 5.
+
+\textbf{Lab1 (9×9, sem coletas — Caminho Ótimo = 12 passos)}
+\begin{table}[H]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Algoritmo} & \textbf{Sucesso} & \textbf{Custo Final} & \textbf{Nós Expandidos} & \textbf{Tempo (ms)} & \textbf{Fronteira Máx.} \\
+\midrule
+BFS    & Sim & 12 & 35 & $\sim$0.12 & 4 \\
+DFS    & Sim & 18 & 18 & $\sim$0.04 & 6 \\
+UCS    & Sim & 12 & 35 & $\sim$0.09 & 4 \\
+Gulosa & Sim & 12 & 12 & $\sim$0.04 & 8 \\
+A$^*$  & Sim & 12 & 27 & $\sim$0.07 & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+    \item \textbf{Otimalidade:} BFS, UCS e A$^*$ garantiram o caminho ótimo de 12 passos. O DFS, focado em profundidade, encontrou uma rota 50\% mais longa (18 passos).
+    \item \textbf{Eficiência da Heurística:} A Busca Gulosa e o A$^*$ expandiram significativamente menos nós (12 e 27, respectivamente) em comparação aos métodos cegos (BFS e UCS expandiram 35 cada). A Gulosa, por ser estritamente gulosa, expandiu menos nós que o A$^*$, porém ao custo de não garantir otimalidade em todos os casos.
+\end{itemize}
+
+\textbf{Lab2 (21×31, formulação A$\rightarrow$B — Caminho Ótimo = 184 passos)}
+\begin{table}[H]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Algoritmo} & \textbf{Sucesso} & \textbf{Custo Final} & \textbf{Nós Expandidos} & \textbf{Tempo (ms)} \\
+\midrule
+BFS    & Sim & 184 & 279 & $\sim$0.93 \\
+DFS    & Sim & 184 & 196 & $\sim$0.34 \\
+UCS    & Sim & 184 & 279 & $\sim$0.54 \\
+Gulosa & Sim & 184 & 244 & $\sim$0.56 \\
+A$^*$  & Sim & 184 & 270 & $\sim$0.59 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+    \item \textbf{Escalabilidade:} O lab2 (21×31 = 651 células) possui cerca de 8× mais células que o lab1 (9×9 = 81 células). O BFS expandiu 279 nós contra 35 do lab1, crescimento compatível com o aumento do espaço de estados. O DFS encontrou o caminho ótimo (184 passos) nesta instância específica, favorecido pela ordem de exploração; este comportamento não é garantido e constitui um artefato do mapa.
+    \item \textbf{Heurística em labirintos densos:} O A$^*$ expandiu 270 nós, valor próximo ao BFS (279), pois a distância de Manhattan subestima pouco o custo real em labirintos com muitas paredes e caminhos sinuosos — reduzindo a vantagem da heurística.
+\end{itemize}
+
+\subsection{Busca Local: Otimização Combinatorial}
+Os testes a seguir avaliam o comportamento de otimização combinatorial para um mapa complexo com 6 pontos de coleta (Lab 2), cujo custo ótimo calculado por força bruta é 200.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Algoritmo} & \textbf{Melhor Custo} & \textbf{Pior Custo} & \textbf{Custo Médio} & \textbf{Tempo} & \textbf{Sucesso} \\
+\midrule
+Hill-Climbing       & 200 & 200 & 200.00 & $\sim$0.28 ms  & 100\% \\
+Simulated Annealing & 200 & 200 & 200.00 & $\sim$34.61 ms & 100\% \\
+Algoritmo Genético  & 200 & 508 & 233.68 & $\sim$181.89 ms & 80\%  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+    \item \textbf{Mínimos Locais vs Eficiência:} Como observado para esta configuração específica, tanto o Hill-Climbing quanto o Simulated Annealing alcançaram 100\% de taxa de sucesso. Contudo, o Hill-Climbing provou-se drasticamente mais eficiente em tempo computacional ($\sim$0.28 ms contra $\sim$34.6 ms do SA). O Algoritmo Genético apresentou o maior tempo de execução e a maior variância, ficando preso em soluções subótimas em 20\% das execuções.
+\end{itemize}
+
+\textbf{Curva Comparativa — Melhor custo por reinicialização — Lab 6 (HC vs SA):}
+
+O Lab 6 (ótimo = 88) evidencia melhor as diferenças entre os algoritmos, pois o HC não converge ao ótimo em todos os casos (taxa de sucesso de 30\%). A tabela abaixo mostra uma amostra de 10 execuções de cada algoritmo:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc}
+\toprule
+\textbf{Execução} & \textbf{Hill-Climbing (HC)} & \textbf{Simulated Annealing (SA)} \\
+\midrule
+1  & 88  & 88 \\
+2  & 118 & 88 \\
+3  & 100 & 88 \\
+4  & 88  & 88 \\
+5  & 112 & 88 \\
+6  & 106 & 88 \\
+7  & 88  & 88 \\
+8  & 118 & 88 \\
+9  & 100 & 88 \\
+10 & 100 & 88 \\
+\midrule
+\textbf{Melhor / Pior / Média} & \textbf{88 / 118 / 101.8} & \textbf{88 / 88 / 88.0} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Busca Online e o ``Custo do Desconhecido''}
+Comparamos o custo real percorrido com o custo que o agente teria se conhecesse o mapa desde o início (ótimo offline = 12 passos no Lab1).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Algoritmo} & \textbf{Sucesso} & \textbf{Mov. Totais} & \textbf{Revisitas} & \textbf{Replan.} & \textbf{Razão} \\
+\midrule
+Replanning A$^*$ & Sim & 12 & 0 & 1 & 1.000 \\
+Online DFS       & Sim & 72 & 49 & 0 & 6.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+    \item \textbf{Replanning A$^*$ sem custo adicional:} O agente online com Replanning A$^*$ encontrou o mesmo caminho que o ótimo offline (razão = 1.000), realizando apenas 1 replanejamento e sem nenhuma revisita. Isso demonstra que, neste mapa, o plano inicial baseado no mapa parcialmente revelado foi suficiente para atingir o objetivo sem desperdício.
+    \item \textbf{Backtracking Excessivo do Online DFS:} O Online DFS percorreu 6 vezes o custo ótimo (72 movimentos contra 12), revisitando 49 células ao longo do caminho. A exploração cega e sistemática obriga o agente a retroceder extensivamente antes de encontrar o objetivo.
+\end{itemize}
+
+\subsection{Comparação de Escalabilidade (Mapa Gigante)}
+Para validar o estresse computacional, rodamos os algoritmos clássicos no Lab5 (81×81, corredor longo, sem coletas).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccl}
+\toprule
+\textbf{Algoritmo} & \textbf{Nós Expandidos} & \textbf{Tempo (ms)} & \textbf{Eficiência Escalar} \\
+\midrule
+A$^*$  & $\sim$220  & $\sim$1.1 & Alta (Guiada por heurística) \\
+DFS    & $\sim$310  & $\sim$1.2 & Média (Rápido, mas subótimo) \\
+Gulosa & $\sim$180  & $\sim$0.8 & Média (Rápido, mas subótimo) \\
+BFS    & $\sim$850  & $\sim$3.5 & Baixa (Exploração circular massiva) \\
+UCS    & $\sim$850* & $\sim$4.1 & Baixa (Cálculo de fila pesada) \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.2cm}
+\footnotesize{\textit{*Nota: Em cenários de custo unitário, UCS e BFS expandem rigorosamente os mesmos nós distintos. O tempo de execução extra do UCS deriva apenas do \textit{overhead} de ordenação e critério de desempate interno da \textit{heap} de prioridade.}}
+\end{table}
+
+\begin{itemize}
+    \item Em grandes dimensões, a ausência de direção dos algoritmos cegos (BFS e UCS) causou uma explosão no número de nós avaliados (quase 1.000 nós). O A$^*$ guiou o agente com precisão matemática, provando ser indispensável para espaços amplos.
+\end{itemize}
+
+\section{Gráficos e Visualizações}
+Esta seção apresenta as visualizações extraídas da interface de simulação, ilustrando o comportamento dos algoritmos discutidos na seção anterior.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imagens/lab1Classica.png}
+    \caption{Visualização da Busca Clássica executada no Lab 1 (mapa simples).}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagens/lab4Classica.jpeg}
+    \caption{Fronteira de exploração da Busca Clássica em ambiente complexo (Lab 4).}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{imagens/lab2Local.png}
+    \caption{Visualização comparativa das curvas de convergência da Busca Local no Lab 2 (6 coletas) — Hill-Climbing, Simulated Annealing e Algoritmo Genético.}
+\end{figure}
+
+\textbf{Interpretação das Curvas de Convergência (Figura 3):}
+\begin{itemize}
+    \item \textbf{Hill-Climbing:} Apresenta uma descida direta, constante e extremamente rápida. Partindo de um custo inicial de 384, o algoritmo encontra o ótimo global (200) em média em apenas 3 passos (iterações).
+    \item \textbf{Simulated Annealing:} Inicia também em 384 e mostra uma queda abrupta nas primeiras iterações, característica da fase de alta temperatura (ampla exploração). É possível notar pequenos platôs (como no custo 246) onde o algoritmo explora o espaço antes que o resfriamento o force a convergir em definitivo para a solução ótima (200).
+    \item \textbf{Algoritmo Genético:} Partindo de uma população inicial cujo melhor indivíduo já apresentava custo 276, o cruzamento e a mutação convergem para o ótimo de 200 logo nas primeiras gerações, mantendo a estabilidade.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagens/lab6Local.jpeg}
+    \caption{Resolução do problema de otimização combinatorial no Lab 6 (múltiplas coletas).}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imagens/lab2Online.jpeg}
+    \caption{Exploração parcial e construção do mapa interno pela Busca Online no Lab 2.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{imagens/lab5Online.jpeg}
+    \caption{Comportamento do agente em um mapa de escala gigante (Lab 5).}
+\end{figure}
+
+\section{Análise Crítica}
+A análise dos resultados reflete premissas teóricas fundamentais. Nos experimentos realizados, todos os movimentos têm custo unitário, portanto \textbf{UCS e BFS expandem os mesmos nós e encontram o mesmo caminho ótimo}. A única diferença prática é o overhead da \textit{heap} de prioridade do UCS, que o torna ligeiramente mais lento. Contudo, se houvesse custos variáveis por tipo de terreno (ex: pântano=3, asfalto=1, grama=2), o UCS diferiria do BFS: o BFS ainda retornaria o caminho com o menor número de passos (ainda que mais caros), enquanto o UCS retornaria o caminho de menor custo financeiro total, provando-se superior em otimalidade real nesse cenário.
+\\
+
+A subotimalidade do DFS se deve ao seu compromisso irreversível com o primeiro ramo encontrado. A admissibilidade da heurística de Manhattan é o que confere ao A$^*$ a segurança matemática de otimalidade, pois ela nunca superestima o custo real dentro de uma grade onde o movimento diagonal é proibido. O A$^*$ evitou a expansão de até 75\% dos nós em mapas de grande escala quando comparado ao BFS, validando a eficácia da busca informada.
+\\
+
+No âmbito da otimização local, o Hill-Climbing demonstrou alta suscetibilidade aos mínimos locais do espaço de permutações. Mesmo utilizando 30 reinicializações aleatórias, o algoritmo estabilizou em subótimos em aproximadamente 70\% dos casos do Lab6. O Simulated Annealing contornou esse problema graças ao ajuste dinâmico de seus parâmetros: uma temperatura inicial adaptativa ($T_0 = 5 \times \text{custo\_inicial}$) propiciou exploração global proporcional à complexidade do problema, enquanto a taxa de resfriamento mais lenta ($\alpha=0.995$) e o teto de 5000 iterações por execução garantiram a convergência adequada para a explotação local nas etapas finais, como ficou claro no achatamento suave das curvas de custo.
+\\
+
+No contexto online, as decisões subótimas ocorrem pela natureza do algoritmo otimista; o agente planeja caminhos por áreas desconhecidas assumindo que estão livres. Quando a realidade impõe uma parede, os recursos percorridos são ``desperdiçados'', o que justifica a razão online/offline superior a 1. O Replanning A$^*$ mostrou-se superior ao Online DFS exatamente porque capitaliza a informação heurística sobre o mapa mental já revelado.
+\\
+
+Observou-se também que \textbf{o mapa interno não convergiu para o mapa real completo}. No Lab1, o A$^*$ online revelou apenas 55\% do mapa para resolver a navegação, e o DFS revelou cerca de 80\%, deixando trechos inteiros inexplorados assim que o objetivo foi atingido. Para \textbf{melhorar a exploração} e a eficiência do agente online, poderia ser implementada uma heurística de penalização de células já visitadas (como no algoritmo LRTA$^*$), incentivando o agente a buscar saídas inéditas e reduzindo o backtracking excessivo gerado por becos sem saída.
+
+\section{Limitações do Sistema}
+Identificou-se que a busca local implementada não garante a otimalidade global e possui desempenho degradável frente a um aumento drástico do número de coletas. A simulação do labirinto online atual atende apenas ao trajeto de 'A' até 'B'; o suporte para coletas obrigatórias nesse módulo exigiria o rastreio simultâneo de estados internos complexos frente à incerteza.
+\\
+
+Todos os algoritmos clássicos implementados baseiam-se numa heurística fixa. Em configurações de labirintos muito densos, onde a métrica de Manhattan desvia consideravelmente da topologia real devido a paredes contínuas, abordagens como distâncias reais pré-computadas trariam maior eficiência ao A$^*$. Há também restrições de infraestrutura computacional: as buscas de estado estendido escalam seu espaço de estados num fator de $2^{|C|}$, tornando a busca exata impraticável (NP-difícil) se o número de coletas ultrapassar 15 unidades. Em questões de plataforma, detectou-se um problema técnico no terminal do sistema Windows, cujo padrão \texttt{cp1252} falha ao renderizar o bloco unicode usado no labirinto.
+
+\section{Uso de Inteligência Artificial}
+Neste trabalho, tivemos um uso pontual de ferramentas de inteligência artificial (Claude e GitHub Copilot). A IA não foi utilizada no desenvolvimento da estrutura principal dos algoritmos da Semana 1. Esses códigos foram baseados nas adaptações da atividade prática anterior (ATV02). Toda a implementação da lógica de busca no labirinto e o cálculo das métricas foram feitos inteiramente pelo grupo.
+\\
+
+A assistência da IA ocorreu nas partes mais complexas, como na lógica de cruzamento e mutação do Algoritmo Genético, na fórmula de probabilidade do Simulated Annealing e na representação dos mapas para o Replanning A$^*$ online. Além disso, a interface gráfica em página web (HTML/CSS/JS) usada para visualizar o agente foi gerada pela IA a partir das descrições do comportamento que o grupo forneceu.
+\\
+
+Vale destacar que as etapas centrais do trabalho foram realizadas sem nenhum uso de IA generativa. Todo o processo de entender o problema, definir as fórmulas matemáticas e as heurísticas, executar os testes e escrever a análise crítica dos resultados foi feito apenas pelos alunos. Isso garante e demonstra a autonomia do grupo no aprendizado prático e teórico dos conceitos da disciplina.
+
+\section{Conclusão}
+A concepção deste trabalho evidenciou a maleabilidade dos agentes de IA mediante o nível de observabilidade disponível. A Busca Clássica cumpre seu papel em sistemas de controle fechados e mapeados, tendo no A$^*$ o estado da arte para resolução exata graças à sua heurística de relaxamento geométrico. A transição para a Busca Local comprovou a eficácia computacional de se ignorar caminhos literais quando o foco prático é a combinatória logística da ordem das tarefas, onde os modelos genéticos se despontam para cenários de altíssima escala.
+\\
+
+Finalmente, o módulo de Busca Online aproxima a IA teórica à robótica de ambientes reais. A imperfeição informacional demanda resiliência algorítmica; o custo pago pelos movimentos exploratórios redundantes (Backtracking) e os ciclos de replanejamento (Replanning) são o tributo cobrado pela imprevisibilidade física. O conjunto dessas vertentes valida a premissa de que a excelência de um agente não reside estritamente em seu processamento bruto, mas na otimização de suas capacidades perceptivas acopladas à melhor abstração do ambiente que ele habita.
+
+\end{document}

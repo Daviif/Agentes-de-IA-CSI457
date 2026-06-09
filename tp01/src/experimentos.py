@@ -1,3 +1,15 @@
+"""
+Experimentos da Semana 1 — Busca Clássica.
+
+Formulação adotada: navegação pura A → B, estado = (linha, coluna).
+Os pontos de coleta intermediários (C) presentes em alguns mapas são
+ignorados propositalmente, pois o objetivo desta etapa é comparar as
+propriedades intrínsecas dos algoritmos (completude, otimalidade,
+complexidade de tempo/espaço) em um espaço de estados simples e uniforme.
+A otimização da ordem de visita dos pontos C é tratada na Semana 2
+como problema de busca local sobre permutações.
+"""
+
 import csv
 import os
 import sys
