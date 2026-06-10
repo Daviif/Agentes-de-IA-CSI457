@@ -49,6 +49,9 @@ def escolher_mapa() -> str:
     print('  2 - lab2 (com pontos de coleta)')
     print('  3 - lab3 (serpentino, maior)')
     print('  4 - lab4 (muito complexo, para teste de performance)')
+    print('  5 - lab5 (teste de performance)')
+    print('  6 - lab6 ')
+    print('  7 - lab7 ')
     print('  0 - Inserir caminho manualmente')
     opcao = input('Opção: ').strip()
     if opcao in MAPAS_PRONTOS:

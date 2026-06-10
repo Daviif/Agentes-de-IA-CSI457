@@ -1050,6 +1050,22 @@ input[type=range] { accent-color:var(--blue); width:130px; cursor:pointer; }
   </div>
 </div>
 
+<!-- Tabela resultados online -->
+<div class="results-area" id="online-results-area">
+  <div class="section-title">Resultados — Busca Online</div>
+  <div class="table-wrap">
+    <table class="results-table">
+      <thead>
+        <tr>
+          <th>Algoritmo</th><th>Sucesso</th><th>Movimentos</th><th>Custo Offline</th>
+          <th>Reveladas</th><th>Revisitadas</th><th>Replanejamentos</th><th>Tempo (ms)</th><th>Razão</th>
+        </tr>
+      </thead>
+      <tbody id="online-results-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
 <script>
 const DATA         = __DATA__;
 const ALGOS        = ['BFS','DFS','UCS','Gulosa','A*'];
@@ -1099,6 +1115,7 @@ function loadMap(id) {
   renderTable(id);
   renderLocalCards(id);
   renderConvCharts(id);
+  renderOnlineTable(id);
   restart();
 }
 
@@ -1521,6 +1538,28 @@ function renderConvCharts(mapId){
   drawConvChart('conv-hc',local.hc.convergencia,'#89b4fa');
   drawConvChart('conv-sa',local.sa.convergencia,'#a6e3a1');
   drawConvChart('conv-ga',local.ga.convergencia,'#cba6f7');
+}
+
+// ── Tabela resultados online ──────────────────────────────────────────────────
+function renderOnlineTable(mapId){
+  const online=DATA[mapId].online;
+  const tbody=document.getElementById('online-results-tbody');
+  tbody.innerHTML='';
+  for(const [nome,d] of Object.entries(online)){
+    const ok=d.encontrado;
+    const tr=document.createElement('tr');
+    tr.innerHTML=
+      `<td>${nome}</td>`+
+      `<td class="${ok?'ok':'fail'}">${ok?'✓':'✗'}</td>`+
+      `<td>${d.movimentos}</td>`+
+      `<td>${d.custo_offline}</td>`+
+      `<td>${d.reveladas}</td>`+
+      `<td>${d.revisitadas}</td>`+
+      `<td>${d.replanejamentos}</td>`+
+      `<td>${d.t}</td>`+
+      `<td>${d.razao!=null?d.razao:'—'}</td>`;
+    tbody.appendChild(tr);
+  }
 }
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
