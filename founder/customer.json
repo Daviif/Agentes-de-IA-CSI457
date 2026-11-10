@@ -1,0 +1,37 @@
+{
+  "business": "Reserva de Quadras: sistema web de agendamento para arenas esportivas, com a marca da arena",
+  "target": "Donos ou gerentes de arenas e quadras de aluguel no Brasil (beach tennis, tênis, society, vôlei de areia), que hoje controlam os horários por WhatsApp, caderno ou planilha. Todos os valores estão em reais (R$); a renda anual é o que a arena deixa para você, em reais",
+  "where": "Brasil, de cidades pequenas do interior a capitais",
+  "age": [26, 58],
+  "segments": [
+    {"name": "Dono de arena pequena, 1 a 2 quadras, cidade do interior", "share": 0.40, "income": [36000, 84000]},
+    {"name": "Dono de arena média, 3 a 6 quadras, cidade média", "share": 0.40, "income": [84000, 180000]},
+    {"name": "Dono ou gerente de arena grande ou clube, 7+ quadras, capital", "share": 0.20, "income": [180000, 420000]}
+  ],
+  "behaviours": [
+    {"name": "Faz tudo pelo WhatsApp", "share": 0.25, "how": "Agenda pelo WhatsApp e num caderno; acha que funciona e desconfia de mensalidade."},
+    {"name": "Vive de mensalista", "share": 0.18, "how": "A maior parte da agenda são horários fixos de turmas e mensalistas; avulso é a sobra."},
+    {"name": "Já usa um aplicativo de reservas", "share": 0.15, "how": "Paga ou já pagou um sistema concorrente e compara tudo com ele."},
+    {"name": "Sofre com faltas e calote", "share": 0.15, "how": "Perde horário nobre com gente que reserva e não aparece; só confia em reserva com Pix adiantado."},
+    {"name": "Caçador de preço", "share": 0.12, "how": "Procura a opção grátis ou a mais barata e pede desconto antes de fechar."},
+    {"name": "Quer profissionalizar", "share": 0.10, "how": "Está crescendo, quer parecer profissional e topa pagar por ferramenta que economize tempo."},
+    {"name": "Avesso a tecnologia", "share": 0.05, "how": "Mal usa computador; quem mexe no celular da arena é um funcionário ou parente."}
+  ],
+  "objections": [
+    "O WhatsApp é grátis e já resolve",
+    "E os meus mensalistas e horários fixos?",
+    "Sem Pix adiantado, o cliente reserva e não aparece",
+    "Meus clientes vão continuar me chamando no WhatsApp de qualquer jeito",
+    "Mais uma mensalidade para pagar todo mês",
+    "Já existe aplicativo que faz isso; por que este?",
+    "Quem configura e me dá suporte num sábado à noite?",
+    "Não conheço a empresa; e se ela sumir com a minha agenda?"
+  ],
+  "habits": [
+    "você responde mensagens de reserva até as 23h, inclusive no domingo",
+    "você atende no bar da arena enquanto confere a agenda num caderno",
+    "você tem outro emprego de dia e toca a arena à noite",
+    "você já perdeu um horário nobre de sexta por causa de reserva duplicada",
+    "você dá aula na própria arena e não consegue olhar o celular durante o treino"
+  ]
+}

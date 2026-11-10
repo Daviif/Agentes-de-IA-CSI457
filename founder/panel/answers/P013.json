@@ -1,0 +1,13 @@
+{
+  "id": "P013",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Minha agenda é quase toda turma e mensalista com horário fixo, e o sistema justamente não faz reserva fixa de mensalista. Pagar R$ 99 por mês só para organizar a sobra de avulso não compensa numa arena de duas quadras.",
+  "objection": "Sem Pix adiantado, o cliente reserva pelo link em 1 minuto e não aparece. Eu fico com a quadra travada e, como estou dando aula, nem vejo para remanejar.",
+  "would_change_my_mind": "Ter reserva fixa de mensalista e cobrança de sinal por Pix na hora da reserva do avulso.",
+  "price_too_cheap": 15,
+  "price_cheap": 39,
+  "price_expensive": 79,
+  "price_too_expensive": 120
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "R$ 99 não é o problema, o problema é que eu mal mexo em computador e a oferta diz 'contratação online' e mais nada: ninguém fala quem cadastra minhas quadras e quem me atende se der pau numa sexta à noite. E sem mensalista fixo eu ia continuar com o caderno para metade dos horários, ou seja, dois controles e a mesma chance de reserva duplicada.",
+  "objection": "Quem configura isso para mim e quem me dá suporte num sábado à noite? Se o sistema e o WhatsApp do meu funcionário marcarem o mesmo horário, eu perco o horário nobre de novo e ainda pago mensalidade.",
+  "would_change_my_mind": "Alguém configurar tudo para mim (quadras, preços, mensalistas fixos já lançados), treinar meu funcionário e deixar um WhatsApp de suporte com gente de verdade respondendo à noite e no fim de semana.",
+  "price_too_cheap": 30,
+  "price_cheap": 70,
+  "price_expensive": 200,
+  "price_too_expensive": 350
+}

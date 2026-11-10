@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "Meus clientes já me chamam no WhatsApp e eu anoto no caderno; funciona. Sem mensalista fixo e sem pagamento online, eu ia continuar no WhatsApp para metade da agenda e ainda pagar mensalidade por um segundo controle.",
+  "objection": "Quem configura isso e quem me atende num sábado à noite se der reserva duplicada enquanto eu estou dando aula? E meus mensalistas, que são a maior parte dos horários, nem entram no sistema.",
+  "would_change_my_mind": "Ter reserva fixa de mensalista e alguém que configure tudo para mim, com suporte por WhatsApp no fim de semana, e um mês grátis para eu ver se o cliente usa mesmo o link.",
+  "price_too_cheap": 25,
+  "price_cheap": 50,
+  "price_expensive": 120,
+  "price_too_expensive": 200
+}

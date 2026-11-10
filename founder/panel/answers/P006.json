@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "Tenho uma ou duas quadras e resolvo tudo no WhatsApp e no caderno; meus alunos e clientes vão continuar me chamando no zap, então eu ia pagar R$ 99 todo mês e ainda ter que lançar as reservas em dois lugares.",
+  "objection": "Boa parte dos meus horários é de mensalista fixo e de aula minha, e o sistema não faz reserva fixa nem cobra ninguém. Sobra pouco horário avulso para justificar uma mensalidade.",
+  "would_change_my_mind": "Se tivesse reserva fixa de mensalista e me avisasse no WhatsApp, e eu pudesse usar uns dois meses de graça para ver se os clientes realmente reservam pelo link em vez de me chamar.",
+  "price_too_cheap": 15,
+  "price_cheap": 35,
+  "price_expensive": 70,
+  "price_too_expensive": 100
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P019",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Metade da minha agenda é mensalista e horário fixo, e o sistema não tem reserva fixa nem pagamento online. O aplicativo que eu já pago faz as duas coisas, então trocar seria andar para trás e voltar a controlar os fixos no caderno.",
+  "objection": "E os meus mensalistas e horários fixos? Se eu tiver que bloquear na mão toda semana cada horário fixo, vira mais trabalho, não menos, e ainda fico sem cobrar pelo Pix na hora da reserva.",
+  "would_change_my_mind": "Ter reserva fixa de mensalista recorrente e pagamento online por Pix no ato da reserva, com um jeito de importar a minha agenda atual.",
+  "price_too_cheap": 30,
+  "price_cheap": 60,
+  "price_expensive": 130,
+  "price_too_expensive": 200
+}

@@ -1,0 +1,222 @@
+[
+ {
+  "id": "P001",
+  "name": "Rosa",
+  "age": 43,
+  "segment": "Dono de arena pequena, 1 a 2 quadras, cidade do interior",
+  "income": 40000,
+  "behaviour": "Quer profissionalizar",
+  "behaviour_how": "Está crescendo, quer parecer profissional e topa pagar por ferramenta que economize tempo.",
+  "objection": "Meus clientes vão continuar me chamando no WhatsApp de qualquer jeito",
+  "habit": "você atende no bar da arena enquanto confere a agenda num caderno"
+ },
+ {
+  "id": "P002",
+  "name": "Arjun",
+  "age": 35,
+  "segment": "Dono de arena média, 3 a 6 quadras, cidade média",
+  "income": 133000,
+  "behaviour": "Avesso a tecnologia",
+  "behaviour_how": "Mal usa computador; quem mexe no celular da arena é um funcionário ou parente.",
+  "objection": "Quem configura e me dá suporte num sábado à noite?",
+  "habit": "você já perdeu um horário nobre de sexta por causa de reserva duplicada"
+ },
+ {
+  "id": "P003",
+  "name": "Maya",
+  "age": 52,
+  "segment": "Dono de arena média, 3 a 6 quadras, cidade média",
+  "income": 157000,
+  "behaviour": "Sofre com faltas e calote",
+  "behaviour_how": "Perde horário nobre com gente que reserva e não aparece; só confia em reserva com Pix adiantado.",
+  "objection": "Não conheço a empresa; e se ela sumir com a minha agenda?",
+  "habit": "você responde mensagens de reserva até as 23h, inclusive no domingo"
+ },
+ {
+  "id": "P004",
+  "name": "Leila",
+  "age": 35,
+  "segment": "Dono de arena média, 3 a 6 quadras, cidade média",
+  "income": 151000,
+  "behaviour": "Faz tudo pelo WhatsApp",
+  "behaviour_how": "Agenda pelo WhatsApp e num caderno; acha que funciona e desconfia de mensalidade.",
+  "objection": "Quem configura e me dá suporte num sábado à noite?",
+  "habit": "você dá aula na própria arena e não consegue olhar o celular durante o treino"
+ },
+ {
+  "id": "P005",
+  "name": "Kai",
+  "age": 35,
+  "segment": "Dono ou gerente de arena grande ou clube, 7+ quadras, capital",
+  "income": 263000,
+  "behaviour": "Já usa um aplicativo de reservas",
+  "behaviour_how": "Paga ou já pagou um sistema concorrente e compara tudo com ele.",
+  "objection": "Quem configura e me dá suporte num sábado à noite?",
+  "habit": "você tem outro emprego de dia e toca a arena à noite"
+ },
+ {
+  "id": "P006",
+  "name": "Lena",
+  "age": 51,
+  "segment": "Dono de arena pequena, 1 a 2 quadras, cidade do interior",
+  "income": 81000,
+  "behaviour": "Faz tudo pelo WhatsApp",
+  "behaviour_how": "Agenda pelo WhatsApp e num caderno; acha que funciona e desconfia de mensalidade.",
+  "objection": "Meus clientes vão continuar me chamando no WhatsApp de qualquer jeito",
+  "habit": "você dá aula na própria arena e não consegue olhar o celular durante o treino"
+ },
+ {
+  "id": "P007",
+  "name": "Ines",
+  "age": 51,
+  "segment": "Dono de arena média, 3 a 6 quadras, cidade média",
+  "income": 175000,
+  "behaviour": "Faz tudo pelo WhatsApp",
+  "behaviour_how": "Agenda pelo WhatsApp e num caderno; acha que funciona e desconfia de mensalidade.",
+  "objection": "O WhatsApp é grátis e já resolve",
+  "habit": "você responde mensagens de reserva até as 23h, inclusive no domingo"
+ },
+ {
+  "id": "P008",
+  "name": "Rohan",
+  "age": 27,
+  "segment": "Dono de arena média, 3 a 6 quadras, cidade média",
+  "income": 120000,
+  "behaviour": "Quer profissionalizar",
+  "behaviour_how": "Está crescendo, quer parecer profissional e topa pagar por ferramenta que economize tempo.",
+  "objection": "Já existe aplicativo que faz isso; por que este?",
+  "habit": "você responde mensagens de reserva até as 23h, inclusive no domingo"
+ },
+ {
+  "id": "P009",
+  "name": "Keisha",
+  "age": 47,
+  "segment": "Dono de arena pequena, 1 a 2 quadras, cidade do interior",
+  "income": 78000,
+  "behaviour": "Caçador de preço",
+  "behaviour_how": "Procura a opção grátis ou a mais barata e pede desconto antes de fechar.",
+  "objection": "Não conheço a empresa; e se ela sumir com a minha agenda?",
+  "habit": "você dá aula na própria arena e não consegue olhar o celular durante o treino"
+ },
+ {
+  "id": "P010",
+  "name": "Elena",
+  "age": 49,
+  "segment": "Dono de arena pequena, 1 a 2 quadras, cidade do interior",
+  "income": 69000,
+  "behaviour": "Vive de mensalista",
+  "behaviour_how": "A maior parte da agenda são horários fixos de turmas e mensalistas; avulso é a sobra.",
+  "objection": "O WhatsApp é grátis e já resolve",
+  "habit": "você já perdeu um horário nobre de sexta por causa de reserva duplicada"
+ },
+ {
+  "id": "P011",
+  "name": "Theo",
+  "age": 38,
+  "segment": "Dono de arena pequena, 1 a 2 quadras, cidade do interior",
+  "income": 38000,
+  "behaviour": "Já usa um aplicativo de reservas",
+  "behaviour_how": "Paga ou já pagou um sistema concorrente e compara tudo com ele.",
+  "objection": "Sem Pix adiantado, o cliente reserva e não aparece",
+  "habit": "você responde mensagens de reserva até as 23h, inclusive no domingo"
+ },
+ {
+  "id": "P012",
+  "name": "Selin",
+  "age": 35,
+  "segment": "Dono ou gerente de arena grande ou clube, 7+ quadras, capital",
+  "income": 341000,
+  "behaviour": "Faz tudo pelo WhatsApp",
+  "behaviour_how": "Agenda pelo WhatsApp e num caderno; acha que funciona e desconfia de mensalidade.",
+  "objection": "Não conheço a empresa; e se ela sumir com a minha agenda?",
+  "habit": "você já perdeu um horário nobre de sexta por causa de reserva duplicada"
+ },
+ {
+  "id": "P013",
+  "name": "Freya",
+  "age": 53,
+  "segment": "Dono de arena pequena, 1 a 2 quadras, cidade do interior",
+  "income": 69000,
+  "behaviour": "Vive de mensalista",
+  "behaviour_how": "A maior parte da agenda são horários fixos de turmas e mensalistas; avulso é a sobra.",
+  "objection": "Sem Pix adiantado, o cliente reserva e não aparece",
+  "habit": "você dá aula na própria arena e não consegue olhar o celular durante o treino"
+ },
+ {
+  "id": "P014",
+  "name": "Jasper",
+  "age": 42,
+  "segment": "Dono de arena média, 3 a 6 quadras, cidade média",
+  "income": 101000,
+  "behaviour": "Vive de mensalista",
+  "behaviour_how": "A maior parte da agenda são horários fixos de turmas e mensalistas; avulso é a sobra.",
+  "objection": "Já existe aplicativo que faz isso; por que este?",
+  "habit": "você dá aula na própria arena e não consegue olhar o celular durante o treino"
+ },
+ {
+  "id": "P015",
+  "name": "Idris",
+  "age": 48,
+  "segment": "Dono de arena pequena, 1 a 2 quadras, cidade do interior",
+  "income": 49000,
+  "behaviour": "Sofre com faltas e calote",
+  "behaviour_how": "Perde horário nobre com gente que reserva e não aparece; só confia em reserva com Pix adiantado.",
+  "objection": "Não conheço a empresa; e se ela sumir com a minha agenda?",
+  "habit": "você tem outro emprego de dia e toca a arena à noite"
+ },
+ {
+  "id": "P016",
+  "name": "Olivia",
+  "age": 34,
+  "segment": "Dono ou gerente de arena grande ou clube, 7+ quadras, capital",
+  "income": 405000,
+  "behaviour": "Sofre com faltas e calote",
+  "behaviour_how": "Perde horário nobre com gente que reserva e não aparece; só confia em reserva com Pix adiantado.",
+  "objection": "Mais uma mensalidade para pagar todo mês",
+  "habit": "você responde mensagens de reserva até as 23h, inclusive no domingo"
+ },
+ {
+  "id": "P017",
+  "name": "Isla",
+  "age": 41,
+  "segment": "Dono de arena média, 3 a 6 quadras, cidade média",
+  "income": 175000,
+  "behaviour": "Vive de mensalista",
+  "behaviour_how": "A maior parte da agenda são horários fixos de turmas e mensalistas; avulso é a sobra.",
+  "objection": "E os meus mensalistas e horários fixos?",
+  "habit": "você já perdeu um horário nobre de sexta por causa de reserva duplicada"
+ },
+ {
+  "id": "P018",
+  "name": "Ada",
+  "age": 28,
+  "segment": "Dono de arena pequena, 1 a 2 quadras, cidade do interior",
+  "income": 37000,
+  "behaviour": "Faz tudo pelo WhatsApp",
+  "behaviour_how": "Agenda pelo WhatsApp e num caderno; acha que funciona e desconfia de mensalidade.",
+  "objection": "Sem Pix adiantado, o cliente reserva e não aparece",
+  "habit": "você atende no bar da arena enquanto confere a agenda num caderno"
+ },
+ {
+  "id": "P019",
+  "name": "Sam",
+  "age": 48,
+  "segment": "Dono de arena média, 3 a 6 quadras, cidade média",
+  "income": 117000,
+  "behaviour": "Já usa um aplicativo de reservas",
+  "behaviour_how": "Paga ou já pagou um sistema concorrente e compara tudo com ele.",
+  "objection": "E os meus mensalistas e horários fixos?",
+  "habit": "você atende no bar da arena enquanto confere a agenda num caderno"
+ },
+ {
+  "id": "P020",
+  "name": "Kofi",
+  "age": 38,
+  "segment": "Dono ou gerente de arena grande ou clube, 7+ quadras, capital",
+  "income": 418000,
+  "behaviour": "Caçador de preço",
+  "behaviour_how": "Procura a opção grátis ou a mais barata e pede desconto antes de fechar.",
+  "objection": "Não conheço a empresa; e se ela sumir com a minha agenda?",
+  "habit": "você responde mensagens de reserva até as 23h, inclusive no domingo"
+ }
+]

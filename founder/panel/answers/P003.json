@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Meu problema não é anotar horário, é gente que reserva e não aparece. Sem Pix adiantado na hora da reserva, um link aberto em que qualquer um reserva em 1 minuto só com nome e WhatsApp vai me dar mais falta, não menos.",
+  "objection": "Não tem pagamento online: qualquer um trava meu horário nobre sem pagar nada, e eu continuo cobrando Pix no WhatsApp até as 23h. Além disso não conheço a empresa; e se ela sumir com a minha agenda?",
+  "would_change_my_mind": "Reserva só confirmada com Pix adiantado (sinal ou valor cheio) cobrado automaticamente no link, e a possibilidade de exportar minha agenda quando eu quiser.",
+  "price_too_cheap": 30,
+  "price_cheap": 70,
+  "price_expensive": 180,
+  "price_too_expensive": 300
+}

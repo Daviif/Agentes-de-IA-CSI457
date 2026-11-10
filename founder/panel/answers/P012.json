@@ -1,0 +1,13 @@
+{
+  "id": "P012",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "R$ 99 não pesa para uma arena do meu tamanho e eu já perdi uma sexta nobre por reserva duplicada, mas não vou colocar a agenda de mais de sete quadras na mão de uma empresa que eu nunca ouvi falar. Além disso, sem reserva fixa de mensalista eu continuaria com o caderno aberto do lado, então seriam dois controles em vez de um.",
+  "objection": "Não conheço a empresa; e se ela sumir com a minha agenda? E boa parte dos meus horários é de mensalista fixo, que o sistema hoje não atende.",
+  "would_change_my_mind": "Ver outra arena grande da minha cidade usando há meses, poder exportar minha agenda a qualquer momento e ter reserva fixa de mensalista; com isso eu testaria um mês.",
+  "price_too_cheap": 30,
+  "price_cheap": 70,
+  "price_expensive": 200,
+  "price_too_expensive": 350
+}
