@@ -1,13 +1,13 @@
 {
   "id": "P013",
-  "buys": false,
-  "purchases_first_month": 0,
-  "reason_code": "need",
-  "reason": "Minha agenda é quase toda turma e mensalista com horário fixo, e o sistema justamente não faz reserva fixa de mensalista. Pagar R$ 99 por mês só para organizar a sobra de avulso não compensa numa arena de duas quadras.",
-  "objection": "Sem Pix adiantado, o cliente reserva pelo link em 1 minuto e não aparece. Eu fico com a quadra travada e, como estou dando aula, nem vejo para remanejar.",
-  "would_change_my_mind": "Ter reserva fixa de mensalista e cobrança de sinal por Pix na hora da reserva do avulso.",
-  "price_too_cheap": 15,
-  "price_cheap": 39,
-  "price_expensive": 79,
-  "price_too_expensive": 120
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "convenience",
+  "reason": "Eu dou aula e não consigo responder WhatsApp no meio do treino, e o sinal por Pix resolve justamente o cara que reserva e some. Como o primeiro mês é grátis, sem cartão, e vocês lançam meus mensalistas, eu testo; se continuo pagando depois é outra conversa.",
+  "objection": "Minha agenda é quase toda mensalista e turma; avulso é sobra. Não sei se os poucos horários avulsos pagam R$ 99 todo mês, e vocês são novos, com poucas arenas usando: se o sistema cair ou a empresa fechar, eu fico com a agenda bagunçada.",
+  "would_change_my_mind": "Se no mês grátis o link não trouxer pelo menos umas 3 ou 4 reservas avulsas pagas que eu não teria fechado pelo WhatsApp, eu cancelo e volto pro caderno.",
+  "price_too_cheap": 25,
+  "price_cheap": 59,
+  "price_expensive": 99,
+  "price_too_expensive": 140
 }

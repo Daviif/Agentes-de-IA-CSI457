@@ -1,13 +1,13 @@
 {
   "id": "P015",
-  "buys": false,
-  "purchases_first_month": 0,
+  "buys": true,
+  "purchases_first_month": 1,
   "reason_code": "need",
-  "reason": "Meu problema é gente que reserva e não aparece, e esse sistema não cobra Pix adiantado. Reserva em 1 minuto só com nome e WhatsApp deixa ainda mais fácil o sujeito travar meu horário nobre e sumir.",
-  "objection": "Sem pagamento antecipado, vou pagar R$ 99 por mês para ter mais falta e calote do que já tenho no WhatsApp. E não conheço a empresa: se ela sumir, minha agenda vai junto.",
-  "would_change_my_mind": "Reserva só confirmada com Pix adiantado (sinal ou valor cheio) caindo direto na minha conta, e um jeito de exportar minha agenda se eu quiser sair.",
-  "price_too_cheap": 20,
-  "price_cheap": 40,
-  "price_expensive": 80,
-  "price_too_expensive": 120
+  "reason": "Meu problema é exatamente esse: gente que reserva o horário nobre e não aparece. Sinal por Pix caindo direto na minha conta e mês grátis sem cartão, eu testo; se um calote a menos por mês já paga os R$ 99, fico.",
+  "objection": "Não conheço a empresa e ela mesma diz que tem poucas arenas. Se ela fechar ou o sistema cair numa sexta à noite, eu fico sem agenda e sem saber quem pagou, e não tenho tempo de dia para resolver.",
+  "would_change_my_mind": "Se o Pix passasse pela conta deles antes de chegar na minha, ou se eu não conseguisse exportar a agenda sozinho logo na primeira semana, eu largava e voltava para o WhatsApp.",
+  "price_too_cheap": 29,
+  "price_cheap": 59,
+  "price_expensive": 129,
+  "price_too_expensive": 199
 }

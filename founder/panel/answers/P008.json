@@ -1,13 +1,13 @@
 {
   "id": "P008",
-  "buys": false,
-  "purchases_first_month": 0,
-  "reason_code": "quality",
-  "reason": "R$ 99 não é o problema, eu pago por ferramenta que me tire do WhatsApp às 23h. Mas sem Pix na reserva e sem horário fixo de mensalista eu continuo cobrando e confirmando tudo na mão, e os aplicativos que já existem fazem isso.",
-  "objection": "Já existe aplicativo que faz reserva com pagamento online e mensalista; este faz menos e não me diz por que eu deveria escolher ele. Metade da minha grade é mensalista e eu teria que bloquear horário por horário.",
-  "would_change_my_mind": "Pagamento por Pix no ato da reserva (para acabar com o furo) e reserva fixa de mensalista; com isso eu assino no mesmo dia.",
-  "price_too_cheap": 30,
-  "price_cheap": 70,
-  "price_expensive": 180,
-  "price_too_expensive": 300
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "convenience",
+  "reason": "Eu respondo reserva até 23h, inclusive domingo, e o sinal por Pix caindo direto na minha conta resolve o furo de horário. Como o primeiro mês é grátis, sem cartão, e vocês configuram tudo, eu testo; se não tirar mensagem do meu WhatsApp, cancelo antes de pagar os R$ 149.",
+  "objection": "Já existe aplicativo que faz isso e vocês mesmos dizem que têm poucas arenas usando. Tenho medo de colocar meus mensalistas e meus clientes num sistema que pode sair do ar num sábado à noite ou fechar daqui a seis meses.",
+  "would_change_my_mind": "Se no mês de teste meus clientes continuarem me chamando no WhatsApp em vez de usar o link, ou se o sistema falhar uma vez em horário de pico, eu não pago o segundo mês.",
+  "price_too_cheap": 39,
+  "price_cheap": 89,
+  "price_expensive": 199,
+  "price_too_expensive": 299
 }

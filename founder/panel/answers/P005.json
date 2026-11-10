@@ -2,12 +2,12 @@
   "id": "P005",
   "buys": false,
   "purchases_first_month": 0,
-  "reason_code": "need",
-  "reason": "Já pago um sistema de reservas que cobra online e controla meus mensalistas. Trocar por um que não tem pagamento nem horário fixo seria andar para trás, mesmo sendo mais barato.",
-  "objection": "Sem pagamento online e sem reserva fixa de mensalista eu volto a cobrar Pix na mão e a controlar no-show pelo WhatsApp, com 7+ quadras e eu só aparecendo à noite. E não está escrito quem me atende se der problema num sábado à noite.",
-  "would_change_my_mind": "Pagamento online (Pix/cartão) na reserva, horário fixo de mensalista e suporte por WhatsApp à noite e no fim de semana, com alguém migrando minhas quadras e reservas do sistema atual.",
-  "price_too_cheap": 49,
-  "price_cheap": 129,
-  "price_expensive": 349,
-  "price_too_expensive": 600
+  "reason_code": "habit",
+  "reason": "Já pago um sistema de reservas que funciona e meus clientes e mensalistas estão acostumados com ele. Com outro emprego de dia, não tenho tempo nem motivo para migrar 7 quadras para uma empresa nova só para economizar um pouco.",
+  "objection": "Vocês mesmos dizem que têm poucas arenas usando. Se o Pix ou a agenda travar num sábado à noite com a casa cheia, quem me garante que alguém responde em minutos e resolve? E trocar de sistema no meio da operação é risco meu.",
+  "would_change_my_mind": "Ver uma arena grande, de 7 ou mais quadras, rodando com vocês há alguns meses, e vocês migrarem toda a minha agenda do sistema atual sem eu parar a operação, com tempo de resposta do suporte garantido por escrito.",
+  "price_too_cheap": 60,
+  "price_cheap": 120,
+  "price_expensive": 280,
+  "price_too_expensive": 450
 }

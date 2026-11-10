@@ -1,0 +1,174 @@
+{
+ "business": "Reserva de Quadras: sistema web de agendamento para arenas esportivas, com a marca da arena",
+ "seed": 947123,
+ "dealt": 20,
+ "answered": 20,
+ "skipped": [],
+ "buys": 1,
+ "passes": 19,
+ "buy_rate": 0.05,
+ "by_segment": [
+  [
+   "Dono de arena pequena, 1 a 2 quadras, cidade do interior",
+   8,
+   0.125
+  ],
+  [
+   "Dono de arena média, 3 a 6 quadras, cidade média",
+   8,
+   0.0
+  ],
+  [
+   "Dono ou gerente de arena grande ou clube, 7+ quadras, capital",
+   4,
+   0.0
+  ]
+ ],
+ "by_behaviour": [
+  [
+   "Quer profissionalizar",
+   2,
+   0.5
+  ],
+  [
+   "Avesso a tecnologia",
+   1,
+   0.0
+  ],
+  [
+   "Sofre com faltas e calote",
+   3,
+   0.0
+  ],
+  [
+   "Faz tudo pelo WhatsApp",
+   5,
+   0.0
+  ],
+  [
+   "Já usa um aplicativo de reservas",
+   3,
+   0.0
+  ],
+  [
+   "Caçador de preço",
+   2,
+   0.0
+  ],
+  [
+   "Vive de mensalista",
+   4,
+   0.0
+  ]
+ ],
+ "by_income": [
+  [
+   "under $78,000",
+   6,
+   0.16666666666666666
+  ],
+  [
+   "$78,000 to $157,000",
+   7,
+   0.0
+  ],
+  [
+   "$157,000 and up",
+   7,
+   0.0
+  ]
+ ],
+ "why_not": [
+  [
+   "need",
+   11,
+   [
+    "Meu problema não é anotar horário, é gente que reserva e não aparece. Sem Pix adiantado na hora da reserva, um link aberto em que qualquer um reserva em 1 minuto só com nome e WhatsApp vai me dar mais falta, não menos.",
+    "Já pago um sistema de reservas que cobra online e controla meus mensalistas. Trocar por um que não tem pagamento nem horário fixo seria andar para trás, mesmo sendo mais barato."
+   ],
+   [
+    "P003",
+    "P005"
+   ]
+  ],
+  [
+   "trust",
+   3,
+   [
+    "R$ 99 não é o problema, o problema é que eu mal mexo em computador e a oferta diz 'contratação online' e mais nada: ninguém fala quem cadastra minhas quadras e quem me atende se der pau numa sexta à noite. E sem mensalista fixo eu ia continuar com o caderno para metade dos horários, ou seja, dois controles e a mesma chance de reserva duplicada.",
+    "R$ 99 não pesa para uma arena do meu tamanho e eu já perdi uma sexta nobre por reserva duplicada, mas não vou colocar a agenda de mais de sete quadras na mão de uma empresa que eu nunca ouvi falar. Além disso, sem reserva fixa de mensalista eu continuaria com o caderno aberto do lado, então seriam dois controles em vez de um."
+   ],
+   [
+    "P002",
+    "P012"
+   ]
+  ],
+  [
+   "habit",
+   3,
+   [
+    "Meus clientes já me chamam no WhatsApp e eu anoto no caderno; funciona. Sem mensalista fixo e sem pagamento online, eu ia continuar no WhatsApp para metade da agenda e ainda pagar mensalidade por um segundo controle.",
+    "Tenho uma ou duas quadras e resolvo tudo no WhatsApp e no caderno; meus alunos e clientes vão continuar me chamando no zap, então eu ia pagar R$ 99 todo mês e ainda ter que lançar as reservas em dois lugares."
+   ],
+   [
+    "P004",
+    "P006"
+   ]
+  ],
+  [
+   "quality",
+   1,
+   [
+    "R$ 99 não é o problema, eu pago por ferramenta que me tire do WhatsApp às 23h. Mas sem Pix na reserva e sem horário fixo de mensalista eu continuo cobrando e confirmando tudo na mão, e os aplicativos que já existem fazem isso."
+   ],
+   [
+    "P008"
+   ]
+  ],
+  [
+   "price",
+   1,
+   [
+    "Tenho só duas quadras e o WhatsApp é de graça; R$ 99 por mês, quase R$ 1.200 por ano, para algo que não cobra o cliente nem cuida dos meus mensalistas não se paga. E eu nem conheço essa empresa para entregar minha agenda na mão dela."
+   ],
+   [
+    "P009"
+   ]
+  ]
+ ],
+ "why_yes": [
+  [
+   "convenience",
+   1,
+   [
+    "Eu perco tempo demais respondendo 'tem horário?' no WhatsApp enquanto atendo no bar, e um link com o nome da arena me deixa com cara de profissional. Como não tem fidelidade, assino um mês para testar; se a turma não usar o link, cancelo."
+   ],
+   [
+    "P001"
+   ]
+  ]
+ ],
+ "flip": [
+  "Alguém configurar tudo para mim (quadras, preços, mensalistas fixos já lançados), treinar meu funcionário e deixar um WhatsApp de suporte com gente de verdade respondendo à noite e no fim de semana.",
+  "Reserva só confirmada com Pix adiantado (sinal ou valor cheio) cobrado automaticamente no link, e a possibilidade de exportar minha agenda quando eu quiser.",
+  "Ter reserva fixa de mensalista e alguém que configure tudo para mim, com suporte por WhatsApp no fim de semana, e um mês grátis para eu ver se o cliente usa mesmo o link.",
+  "Pagamento online (Pix/cartão) na reserva, horário fixo de mensalista e suporte por WhatsApp à noite e no fim de semana, com alguém migrando minhas quadras e reservas do sistema atual.",
+  "Se tivesse reserva fixa de mensalista e me avisasse no WhatsApp, e eu pudesse usar uns dois meses de graça para ver se os clientes realmente reservam pelo link em vez de me chamar.",
+  "Um mês grátis para testar, com horário fixo de mensalista e sinal por Pix na hora da reserva, para o cliente parar de me chamar no WhatsApp de verdade.",
+  "Pagamento por Pix no ato da reserva (para acabar com o furo) e reserva fixa de mensalista; com isso eu assino no mesmo dia.",
+  "Um plano grátis ou uns 2 meses de teste sem cartão para arena pequena, com reserva fixa de mensalista e um jeito de eu exportar minha agenda quando quiser; depois disso, no máximo uns R$ 39 por mês.",
+  "Ter reserva fixa recorrente de mensalista e turma, para a agenda inteira ficar num lugar só e o link só mostrar o que realmente está livre.",
+  "Pix obrigatório no ato da reserva (sinal ou valor cheio) e reserva fixa de mensalista, com um mês de teste grátis para eu comparar com o que já uso.",
+  "Ver outra arena grande da minha cidade usando há meses, poder exportar minha agenda a qualquer momento e ter reserva fixa de mensalista; com isso eu testaria um mês.",
+  "Ter reserva fixa de mensalista e cobrança de sinal por Pix na hora da reserva do avulso.",
+  "Ter reserva fixa de mensalista e turmas recorrentes dentro do sistema, para a agenda inteira ficar num lugar só; com Pix na reserva do avulso eu fecharia.",
+  "Reserva só confirmada com Pix adiantado (sinal ou valor cheio) caindo direto na minha conta, e um jeito de exportar minha agenda se eu quiser sair.",
+  "Pix adiantado (sinal ou valor cheio) na hora da reserva, com o horário liberado sozinho se não pagar em alguns minutos, e reserva fixa de mensalista.",
+  "Reserva recorrente de mensalista e turma (horário fixo semanal que já aparece ocupado no link), para a agenda inteira ficar num lugar só.",
+  "Cobrar um sinal por Pix na hora da reserva, com o horário só confirmando depois do pagamento, e um mês grátis para eu testar com meus clientes.",
+  "Ter reserva fixa de mensalista recorrente e pagamento online por Pix no ato da reserva, com um jeito de importar a minha agenda atual.",
+  "Um mês grátis com exportação da agenda a qualquer momento, reserva fixa de mensalista funcionando e duas ou três arenas grandes da minha cidade que eu possa ligar para confirmar que usam."
+ ],
+ "purchases_first_month_per_buyer": 1.0,
+ "price_answers": 20
+}

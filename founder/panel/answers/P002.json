@@ -1,13 +1,13 @@
 {
   "id": "P002",
-  "buys": false,
-  "purchases_first_month": 0,
-  "reason_code": "trust",
-  "reason": "R$ 99 não é o problema, o problema é que eu mal mexo em computador e a oferta diz 'contratação online' e mais nada: ninguém fala quem cadastra minhas quadras e quem me atende se der pau numa sexta à noite. E sem mensalista fixo eu ia continuar com o caderno para metade dos horários, ou seja, dois controles e a mesma chance de reserva duplicada.",
-  "objection": "Quem configura isso para mim e quem me dá suporte num sábado à noite? Se o sistema e o WhatsApp do meu funcionário marcarem o mesmo horário, eu perco o horário nobre de novo e ainda pago mensalidade.",
-  "would_change_my_mind": "Alguém configurar tudo para mim (quadras, preços, mensalistas fixos já lançados), treinar meu funcionário e deixar um WhatsApp de suporte com gente de verdade respondendo à noite e no fim de semana.",
-  "price_too_cheap": 30,
-  "price_cheap": 70,
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "need",
+  "reason": "Já perdi uma sexta à noite por reserva duplicada e não quero passar por isso de novo. Como vocês configuram tudo e o primeiro mês é grátis sem cartão, eu deixo meu sobrinho testar, mas só fico pagando os R$ 149 se o suporte responder de verdade.",
+  "objection": "Empresa nova, com poucas arenas usando: se o sistema travar num sábado às 20h e ninguém responder no WhatsApp, quem fica com a quadra cheia de cliente brigando sou eu. E eu mesmo não sei mexer nisso, dependo do funcionário.",
+  "would_change_my_mind": "Se no mês grátis o suporte demorar para responder à noite ou no fim de semana, ou se meus clientes mais antigos reclamarem de pagar sinal por Pix, eu volto para o caderno e o WhatsApp.",
+  "price_too_cheap": 40,
+  "price_cheap": 90,
   "price_expensive": 200,
-  "price_too_expensive": 350
+  "price_too_expensive": 300
 }

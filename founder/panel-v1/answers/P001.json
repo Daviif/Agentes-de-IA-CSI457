@@ -1,0 +1,13 @@
+{
+  "id": "P001",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "convenience",
+  "reason": "Eu perco tempo demais respondendo 'tem horário?' no WhatsApp enquanto atendo no bar, e um link com o nome da arena me deixa com cara de profissional. Como não tem fidelidade, assino um mês para testar; se a turma não usar o link, cancelo.",
+  "objection": "Meus clientes vão continuar me chamando no WhatsApp de qualquer jeito, e aí eu pago R$ 99 para ter o caderno e mais um painel para atualizar. Também me incomoda não ter horário fixo de mensalista, porque boa parte da minha agenda é isso e vou ter que bloquear na mão.",
+  "would_change_my_mind": "Se depois do primeiro mês menos da metade das reservas vier pelo link, eu cancelo; reserva fixa de mensalista é o que me faria ficar de vez.",
+  "price_too_cheap": 29,
+  "price_cheap": 59,
+  "price_expensive": 129,
+  "price_too_expensive": 179
+}

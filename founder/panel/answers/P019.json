@@ -2,12 +2,12 @@
   "id": "P019",
   "buys": false,
   "purchases_first_month": 0,
-  "reason_code": "need",
-  "reason": "Metade da minha agenda é mensalista e horário fixo, e o sistema não tem reserva fixa nem pagamento online. O aplicativo que eu já pago faz as duas coisas, então trocar seria andar para trás e voltar a controlar os fixos no caderno.",
-  "objection": "E os meus mensalistas e horários fixos? Se eu tiver que bloquear na mão toda semana cada horário fixo, vira mais trabalho, não menos, e ainda fico sem cobrar pelo Pix na hora da reserva.",
-  "would_change_my_mind": "Ter reserva fixa de mensalista recorrente e pagamento online por Pix no ato da reserva, com um jeito de importar a minha agenda atual.",
-  "price_too_cheap": 30,
-  "price_cheap": 60,
-  "price_expensive": 130,
-  "price_too_expensive": 200
+  "reason_code": "habit",
+  "reason": "Já pago um sistema de reservas e meus mensalistas já estão lançados lá. Trocar tudo no meio da temporada por uma empresa nova, para ganhar o que eu em boa parte já tenho, não compensa o trabalho.",
+  "objection": "Vocês têm poucas arenas usando. Se o sistema cair num sábado à noite ou a empresa fechar daqui a seis meses, quem fica com a agenda bagunçada e o cliente reclamando no balcão sou eu.",
+  "would_change_my_mind": "Vocês migrarem meus mensalistas e horários fixos do sistema que uso hoje sem eu digitar nada, e eu conversar com um dono de arena do meu porte que usa há alguns meses e sair mais barato do que pago hoje.",
+  "price_too_cheap": 40,
+  "price_cheap": 90,
+  "price_expensive": 180,
+  "price_too_expensive": 260
 }

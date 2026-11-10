@@ -1,0 +1,13 @@
+{
+  "id": "P014",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Minha agenda é quase toda de turma e mensalista com horário fixo, e o sistema justamente não faz reserva fixa. Eu ia pagar R$ 99 para organizar só a sobra do avulso e continuar com a planilha para o resto.",
+  "objection": "Já existe aplicativo de quadra que faz reserva, mensalista e pagamento; por que eu usaria este, que não tem nenhum dos dois, e ainda teria que manter dois controles e bloquear na mão todos os horários fixos?",
+  "would_change_my_mind": "Ter reserva fixa de mensalista e turmas recorrentes dentro do sistema, para a agenda inteira ficar num lugar só; com Pix na reserva do avulso eu fecharia.",
+  "price_too_cheap": 25,
+  "price_cheap": 59,
+  "price_expensive": 129,
+  "price_too_expensive": 199
+}

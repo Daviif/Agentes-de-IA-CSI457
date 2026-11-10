@@ -1,13 +1,13 @@
 {
   "id": "P004",
-  "buys": false,
-  "purchases_first_month": 0,
-  "reason_code": "habit",
-  "reason": "Meus clientes já me chamam no WhatsApp e eu anoto no caderno; funciona. Sem mensalista fixo e sem pagamento online, eu ia continuar no WhatsApp para metade da agenda e ainda pagar mensalidade por um segundo controle.",
-  "objection": "Quem configura isso e quem me atende num sábado à noite se der reserva duplicada enquanto eu estou dando aula? E meus mensalistas, que são a maior parte dos horários, nem entram no sistema.",
-  "would_change_my_mind": "Ter reserva fixa de mensalista e alguém que configure tudo para mim, com suporte por WhatsApp no fim de semana, e um mês grátis para eu ver se o cliente usa mesmo o link.",
-  "price_too_cheap": 25,
-  "price_cheap": 50,
-  "price_expensive": 120,
-  "price_too_expensive": 200
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "convenience",
+  "reason": "Eu dou aula e fico uma, duas horas sem olhar o WhatsApp; nesse tempo perco reserva ou o cliente fica sem resposta. Como o primeiro mês é grátis, sem cartão, e vocês lançam os mensalistas para mim, eu testo, mas só continuo pagando se os clientes realmente usarem o link em vez de me chamar no WhatsApp.",
+  "objection": "Empresa nova com poucas arenas: quem garante que alguém me responde de verdade num sábado às 21h quando der horário duplicado ou o Pix não cair? E meus clientes estão acostumados a me chamar no WhatsApp, não sei se vão pagar sinal para reservar.",
+  "would_change_my_mind": "Se no mês grátis o suporte demorar a responder num fim de semana, ou se der uma reserva duplicada com mensalista, eu cancelo e volto para o caderno.",
+  "price_too_cheap": 40,
+  "price_cheap": 90,
+  "price_expensive": 180,
+  "price_too_expensive": 280
 }

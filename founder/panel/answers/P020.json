@@ -3,11 +3,11 @@
   "buys": false,
   "purchases_first_month": 0,
   "reason_code": "trust",
-  "reason": "Tenho mais de 7 quadras e boa parte da grade é de mensalista fixo; não vou colocar a agenda inteira na mão de uma empresa que nunca ouvi falar, ainda mais sem horário fixo e sem pagamento online. R$ 99 é pouco, mas antes de pagar eu ia querer testar de graça.",
-  "objection": "Não conheço a empresa; se ela sair do ar ou sumir num sábado, eu perco a agenda de todas as quadras e não tenho para quem ligar.",
-  "would_change_my_mind": "Um mês grátis com exportação da agenda a qualquer momento, reserva fixa de mensalista funcionando e duas ou três arenas grandes da minha cidade que eu possa ligar para confirmar que usam.",
-  "price_too_cheap": 25,
-  "price_cheap": 59,
+  "reason": "Tenho mais de 7 quadras e a agenda inteira é o meu negócio; não vou colocar isso na mão de uma empresa nova que ela mesma diz ter poucas arenas usando. O mês grátis eu até olharia, mas pagar R$ 149 sem ver outra arena grande usando, não.",
+  "objection": "Não conheço a empresa; se ela fechar ou o sistema cair num sábado à noite, fico sem agenda e sem reserva, e ainda tenho que treinar equipe e cliente de novo.",
+  "would_change_my_mind": "Ver duas ou três arenas grandes da minha cidade usando há meses e conseguir um desconto: uns 3 meses grátis ou preço travado em R$ 99 para todas as quadras.",
+  "price_too_cheap": 30,
+  "price_cheap": 79,
   "price_expensive": 149,
-  "price_too_expensive": 250
+  "price_too_expensive": 220
 }

@@ -1,13 +1,13 @@
 {
   "id": "P018",
-  "buys": false,
-  "purchases_first_month": 0,
+  "buys": true,
+  "purchases_first_month": 1,
   "reason_code": "need",
-  "reason": "Com uma ou duas quadras eu dou conta no WhatsApp e no caderno, e não vou pagar R$ 99 todo mês por uma agenda que não cobra Pix adiantado. Sem sinal pago, o cliente reserva pelo link em um minuto e não aparece, e quem fica com o horário vazio sou eu.",
-  "objection": "Sem Pix adiantado o cliente reserva e não aparece; reservar fácil demais, sem pagar nada, só aumenta o furo. E ainda é mais uma mensalidade.",
-  "would_change_my_mind": "Cobrar um sinal por Pix na hora da reserva, com o horário só confirmando depois do pagamento, e um mês grátis para eu testar com meus clientes.",
-  "price_too_cheap": 15,
-  "price_cheap": 39,
-  "price_expensive": 79,
-  "price_too_expensive": 120
+  "reason": "O que mais me dá prejuízo é cliente que reserva pelo WhatsApp e não aparece, e aqui ele só segura o horário pagando o sinal por Pix direto na minha conta. Como o primeiro mês é grátis e sem cartão, eu testo; se não diminuir o furo, eu volto pro caderno.",
+  "objection": "R$ 99 todo mês pesa pra quem tem só duas quadras, e eu não sei se meu cliente, acostumado a me chamar no WhatsApp, vai aceitar abrir link e pagar sinal. Além disso a empresa é nova e pode sumir com a minha agenda dentro.",
+  "would_change_my_mind": "Se no mês grátis os clientes continuarem me chamando no WhatsApp em vez de usar o link, ou se os furos não caírem o bastante pra pagar os R$ 99, eu cancelo.",
+  "price_too_cheap": 20,
+  "price_cheap": 49,
+  "price_expensive": 99,
+  "price_too_expensive": 150
 }

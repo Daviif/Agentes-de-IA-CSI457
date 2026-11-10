@@ -1,0 +1,13 @@
+{
+  "id": "P017",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Minha agenda é quase toda de mensalista e turma fixa, e o próprio anúncio diz que não tem reserva fixa. Eu teria que bloquear na mão toda semana cada horário fixo, ou seja, mais trabalho e o mesmo risco de reserva duplicada que eu já tenho.",
+  "objection": "E os meus mensalistas e horários fixos? Se o sistema não sabe que a sexta às 19h é da turma de sempre, um avulso reserva pelo link e eu perco horário nobre de novo.",
+  "would_change_my_mind": "Reserva recorrente de mensalista e turma (horário fixo semanal que já aparece ocupado no link), para a agenda inteira ficar num lugar só.",
+  "price_too_cheap": 29,
+  "price_cheap": 69,
+  "price_expensive": 199,
+  "price_too_expensive": 349
+}

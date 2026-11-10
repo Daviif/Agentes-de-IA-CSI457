@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Minha agenda é quase toda de mensalista e turma com horário fixo, e o sistema não tem reserva fixa de mensalista. Eu ia ter que bloquear tudo na mão toda semana para organizar só a sobra do avulso, e isso o WhatsApp já faz de graça.",
+  "objection": "Sem horário fixo de mensalista, vou manter dois controles, o caderno e o sistema, e é aí que a reserva duplicada acontece de novo, igual à sexta que eu perdi.",
+  "would_change_my_mind": "Ter reserva fixa recorrente de mensalista e turma, para a agenda inteira ficar num lugar só e o link só mostrar o que realmente está livre.",
+  "price_too_cheap": 20,
+  "price_cheap": 49,
+  "price_expensive": 99,
+  "price_too_expensive": 150
+}

@@ -1,0 +1,23 @@
+{
+  "business": "Reserva de Quadras (assinatura por arena). Unidade = 1 arena-dia, ou seja, R$ 99 / 30 dias; 'plan_per_day' = número de arenas pagantes",
+  "unit": "arena-dia",
+  "price": 3.30,
+  "variable": [
+    {"label": "Hospedagem, banco de dados e e-mails por arena (ESTIMATIVA)", "cost": 0.12},
+    {"label": "Mensagens/WhatsApp por arena (ESTIMATIVA)", "cost": 0.15},
+    {"label": "Reserva para estorno/inadimplência do Pix (ESTIMATIVA)", "cost": 0.03}
+  ],
+  "fixed_monthly": [
+    {"label": "Atendente de suporte meio período, noite e fim de semana (ESTIMATIVA)", "cost": 2500},
+    {"label": "Ferramentas: domínio, e-mail, monitoramento, contabilidade (ESTIMATIVA)", "cost": 600},
+    {"label": "Anúncios e materiais de venda (ESTIMATIVA)", "cost": 1500}
+  ],
+  "startup": [
+    {"label": "Desenvolvimento de Pix + horários fixos de mensalista (ESTIMATIVA; tempo do fundador não incluído)", "cost": 6000},
+    {"label": "Abertura de empresa e contador (ESTIMATIVA)", "cost": 1500},
+    {"label": "Site de vendas e identidade visual (ESTIMATIVA)", "cost": 1500}
+  ],
+  "days_per_month": 30,
+  "plan_per_day": 60,
+  "ramp_per_day": [3, 6, 10, 15, 21, 28, 35, 42, 49, 54, 58, 60]
+}
