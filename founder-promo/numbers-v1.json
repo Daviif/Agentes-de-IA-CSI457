@@ -1,0 +1,21 @@
+{
+  "business": "Canal de promoções no Telegram com links de afiliado. Unidade = 1 compra feita por link do canal; 'price' = comissão média por compra (estimativa)",
+  "unit": "compra por link",
+  "price": 7.20,
+  "variable": [
+    {"label": "Reserva para cancelamento e devolução que anulam a comissão: 12% da comissão (ESTIMATIVA)", "cost": 0.86}
+  ],
+  "fixed_monthly": [
+    {"label": "Servidor e banco de dados (ESTIMATIVA)", "cost": 80},
+    {"label": "Domínio, encurtador e extras (ESTIMATIVA)", "cost": 20},
+    {"label": "Dados de histórico de preço, API ou assinatura (ESTIMATIVA)", "cost": 100},
+    {"label": "Anúncios e parcerias para crescer a audiência (ESTIMATIVA)", "cost": 500},
+    {"label": "Contador / DAS de MEI ou equivalente (ESTIMATIVA)", "cost": 80}
+  ],
+  "startup": [
+    {"label": "Abertura de CNPJ/MEI e ferramentas iniciais (ESTIMATIVA; tempo de desenvolvimento do fundador NÃO incluído)", "cost": 500}
+  ],
+  "days_per_month": 30,
+  "plan_per_day": 9,
+  "ramp_per_day": [0.2, 0.5, 0.9, 1.4, 2.0, 2.7, 3.5, 4.4, 5.4, 6.5, 7.7, 9.0]
+}

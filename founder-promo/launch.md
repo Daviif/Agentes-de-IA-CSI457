@@ -1,3 +1,5 @@
+> **Nota (13/11/2026):** este roteiro foi escrito para o plano de um canal só. O roteiro atual, com dois canais, três portões e datas propostas, está no documento "Estudo de viabilidade" (seção "Como e quando começar").
+
 # Lançamento
 
 ## 1. O teste barato antes de gastar (portão 1 do documento)

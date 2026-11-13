@@ -1,21 +1,59 @@
 {
-  "business": "Canal de promoções no Telegram com links de afiliado. Unidade = 1 compra feita por link do canal; 'price' = comissão média por compra (estimativa)",
+  "business": "Dois canais de promoções no Telegram (A ticket alto, B ticket baixo) com links de afiliado. Unidade = 1 compra por link; 'price' = comissão média ponderada por compra (ESTIMATIVA, cenário base)",
   "unit": "compra por link",
-  "price": 7.20,
+  "price": 6.57,
   "variable": [
-    {"label": "Reserva para cancelamento e devolução que anulam a comissão: 12% da comissão (ESTIMATIVA)", "cost": 0.86}
+    {
+      "label": "Reserva para cancelamento e devolução (ESTIMATIVA, média ponderada)",
+      "cost": 0.99
+    }
   ],
   "fixed_monthly": [
-    {"label": "Servidor e banco de dados (ESTIMATIVA)", "cost": 80},
-    {"label": "Domínio, encurtador e extras (ESTIMATIVA)", "cost": 20},
-    {"label": "Dados de histórico de preço, API ou assinatura (ESTIMATIVA)", "cost": 100},
-    {"label": "Anúncios e parcerias para crescer a audiência (ESTIMATIVA)", "cost": 500},
-    {"label": "Contador / DAS de MEI ou equivalente (ESTIMATIVA)", "cost": 80}
+    {
+      "label": "VPS e banco de dados (ESTIMATIVA)",
+      "cost": 100
+    },
+    {
+      "label": "Dados de histórico de preço (ESTIMATIVA)",
+      "cost": 100
+    },
+    {
+      "label": "Ferramentas de arte e agendamento (ESTIMATIVA)",
+      "cost": 100
+    },
+    {
+      "label": "Domínio e encurtador (ESTIMATIVA)",
+      "cost": 30
+    },
+    {
+      "label": "Contador / DAS de MEI (ESTIMATIVA)",
+      "cost": 90
+    }
   ],
   "startup": [
-    {"label": "Abertura de CNPJ/MEI e ferramentas iniciais (ESTIMATIVA; tempo de desenvolvimento do fundador NÃO incluído)", "cost": 500}
+    {
+      "label": "Abertura de CNPJ/MEI e contador (ESTIMATIVA; tempo do fundador NÃO incluído)",
+      "cost": 500
+    },
+    {
+      "label": "Identidade visual, domínios, contas (ESTIMATIVA; tempo do fundador NÃO incluído)",
+      "cost": 300
+    }
   ],
   "days_per_month": 30,
-  "plan_per_day": 9,
-  "ramp_per_day": [0.2, 0.5, 0.9, 1.4, 2.0, 2.7, 3.5, 4.4, 5.4, 6.5, 7.7, 9.0]
+  "plan_per_day": 2.9,
+  "ramp_per_day": [
+    0.08,
+    0.18,
+    0.29,
+    0.42,
+    0.57,
+    0.76,
+    0.98,
+    1.24,
+    1.55,
+    1.92,
+    2.36,
+    2.9
+  ]
 }

@@ -1,3 +1,5 @@
+> **Nota (13/11/2026):** este plano de marketing é da versão de um canal só. Com dois canais, cada canal e cada rede tem o seu sub ID; ver o documento "Estudo de viabilidade".
+
 # Marketing
 
 **Base:** painel simulado (45% entrariam e comprariam ao menos uma vez; teto), `competitors.md` (Promobit, Pelando, Achados do TB e Zoom/Buscapé já ocupam o espaço, todos de graça) e `cfo.md` (cada inscrito rende cerca de R$ 0,19/mês).
