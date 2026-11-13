@@ -10,34 +10,22 @@
   ],
   "fixed_monthly": [
     {
-      "label": "VPS e banco de dados (ESTIMATIVA)",
-      "cost": 100
-    },
-    {
       "label": "Dados de histórico de preço (ESTIMATIVA)",
       "cost": 100
     },
     {
-      "label": "Ferramentas de arte e agendamento (ESTIMATIVA)",
-      "cost": 100
+      "label": "Domínio (R$ 80 por ano, diluído) (ESTIMATIVA)",
+      "cost": 7
     },
     {
-      "label": "Domínio e encurtador (ESTIMATIVA)",
-      "cost": 30
-    },
-    {
-      "label": "Contador / DAS de MEI (ESTIMATIVA)",
+      "label": "DAS do MEI (ESTIMATIVA)",
       "cost": 90
     }
   ],
   "startup": [
     {
-      "label": "Abertura de CNPJ/MEI e contador (ESTIMATIVA; tempo do fundador NÃO incluído)",
-      "cost": 500
-    },
-    {
-      "label": "Identidade visual, domínios, contas (ESTIMATIVA; tempo do fundador NÃO incluído)",
-      "cost": 300
+      "label": "Sem custo de partida: CNPJ/MEI gratuito, identidade visual feita com Claude, VPS gratuita",
+      "cost": 0
     }
   ],
   "days_per_month": 30,

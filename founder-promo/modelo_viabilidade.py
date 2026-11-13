@@ -9,11 +9,13 @@ import json, sys
 
 MESES = 24
 SPLIT_A = 0.40          # fatia da audiência no canal A (ticket alto)
-FIXO = {"VPS e banco de dados": 100, "Dados de histórico de preço": 100,
-        "Ferramentas de arte e agendamento": 100, "Domínio e encurtador": 30,
-        "Contador / DAS de MEI": 90}
-PARTIDA = {"Abertura de CNPJ/MEI e contador": 500, "Identidade visual, domínios, contas": 300}
-HORAS_SEMANA, VALOR_HORA = 15, 50   # custo de oportunidade do fundador (não é caixa)
+# Custos revisados pelo fundador (13/11/2026): CNPJ/MEI grátis; identidade visual feita com Claude;
+# VPS e banco no Oracle Free Tier ou máquina própria (R$ 0); ferramentas e agendamento open source (R$ 0);
+# domínio é pago; o tempo do fundador NÃO é contado (decisão dele).
+FIXO = {"Dados de histórico de preço": 100,
+        "Domínio (R$ 80 por ano, diluído)": 7,
+        "DAS do MEI": 90}
+PARTIDA = {}
 
 CEN = {
  "pessimista": dict(a0=80,  g=0.08, cap=500,  churn=0.05,
@@ -87,7 +89,7 @@ if __name__ == "__main__":
           "unit": "compra por link", "price": round(preco, 2),
           "variable": [{"label": "Reserva para cancelamento e devolução (ESTIMATIVA, média ponderada)", "cost": round(res, 2)}],
           "fixed_monthly": [{"label": k + " (ESTIMATIVA)", "cost": v} for k, v in FIXO.items()],
-          "startup": [{"label": k + " (ESTIMATIVA; tempo do fundador NÃO incluído)", "cost": v} for k, v in PARTIDA.items()],
+          "startup": ([{"label": k + " (ESTIMATIVA)", "cost": v} for k, v in PARTIDA.items()] or [{"label": "Sem custo de partida: CNPJ/MEI gratuito, identidade visual feita com Claude, VPS gratuita", "cost": 0}]),
           "days_per_month": 30, "plan_per_day": round(ls[-1]["compras_dia"], 2),
           "ramp_per_day": [round(l["compras_dia"], 2) for l in ls]},
           open("numbers.json", "w"), ensure_ascii=False, indent=2)

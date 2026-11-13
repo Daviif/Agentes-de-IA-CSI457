@@ -3,17 +3,17 @@
 **Verdict: Not yet**
 
 - ✓ Each compra por link earns R$5.58 before fixed costs (85% contribution).
-- ✗ Year 1 operating LOSS: R$2,822.
+- ✗ Year 1 operating LOSS: R$146.
 - ✓ 9 of 20 simulated buyers buy (45%, the bar is 25%).
 
 | key number | |
 | --- | ---: |
 | Price | R$6.57 a compra por link |
-| Profit margin at plan | 11% per compra por link |
-| Break-even | 3 compra por links a day |
-| Year 1 operating profit | R$-2,822 |
-| Startup spend | R$800 |
-| Cash needed before it pays for itself | R$3,687 |
+| Profit margin at plan | 50% per compra por link |
+| Break-even | 2 compra por links a day |
+| Year 1 operating profit | R$-146 |
+| Startup spend | R$0 |
+| Cash needed before it pays for itself | R$830 |
 | Startup money earned back | not in year 1 |
 | Buyer panel | 9 buy · 11 pass |
 
@@ -33,21 +33,19 @@
 
 ## Summary
 
-**O negócio:** dois canais grátis de ofertas no Telegram (A: ticket alto, como TVs e eletro; B: ticket baixo, como acessórios e casa), rodando em VPS própria, divulgados em várias redes sociais; a receita é a comissão de afiliado das lojas.
+**O negócio:** dois canais grátis de ofertas no Telegram (A: ticket alto; B: ticket baixo), em VPS gratuita (Oracle Free Tier ou máquina própria), divulgados em várias redes; a receita é a comissão de afiliado das lojas.
 
-**Veredito (calculado):** ver o topo de `business-plan.md`: **"Ainda não"**. O ano 1 tem prejuízo operacional de R$ 2.822.
+**Veredito (calculado):** ver o topo de `business-plan.md`: **"Ainda não"**, por pouco (ano 1 com prejuízo operacional de R$ 146).
 
-**Os números (cenário base, estimativas minhas):** custo fixo de R$ 420 por mês e R$ 800 de partida; equilíbrio com cerca de 4.600 inscritos; prejuízo até o mês 11 (caixa mais fundo: −R$ 3.687); lucro mensal a partir do mês 12; caixa de volta a zero no mês 20; R$ 1.024 de lucro por mês no mês 24. No cenário pessimista nunca se paga (−R$ 9.980 no mês 24); no otimista, lucro mensal no mês 4 e caixa de volta a zero no mês 8. **O tempo do fundador (R$ 3.250 por mês) não é coberto em 24 meses no cenário base.**
+**Os números (cenário base, estimativas minhas):** R$ 0 de partida e R$ 197 por mês (dados de preço R$ 100, DAS do MEI R$ 90, domínio R$ 7); equilíbrio com cerca de 2.200 inscritos; caixa mais fundo de −R$ 831 no mês 7; lucro mensal a partir do mês 8; caixa de volta a zero no mês 13; R$ 1.247 de lucro por mês no mês 24. No pessimista nunca se paga (−R$ 3.828 no mês 24); no otimista, lucro mensal no mês 3. **O tempo do fundador não é contado, por decisão dele.**
 
-**O que decide:** o crescimento de inscritos e a conversão em compras, não a mistura entre TVs e cabos. Uma TV vale 13 cabos em comissão, mas quem compra TV pelo link é muito mais raro.
+**O que decide:** crescimento de inscritos e conversão em compras, não a mistura entre TVs e cabos.
 
-**Conselho e painel:** o conselho deu 3 "investe se" (nota média 3,7). O painel simulado, 9 de 20 entrariam e comprariam por um link (teto); ele não entrou nas contas.
+**Conselho e painel:** conselho com 3 "investe se" (média 3,7); painel simulado com 9 de 20 (teto), fora das contas.
 
-**Como começar:** pedir os cadastros de afiliado hoje, escrever a regra de publicação e fazer um teste manual com dois canais, com três portões de decisão (inscritos e compras, não o caixa) e critério de parar; perda máxima em dinheiro de cerca de R$ 3.300 se parar no portão 3.
+**Como começar:** cadastros de afiliado hoje, regra de publicação, teste manual com dois canais e três portões (inscritos e compras); perda máxima em dinheiro de cerca de R$ 1.100 se parar no portão 3.
 
-**Estudo completo:** documento "Estudo de viabilidade", gerado por `modelo_viabilidade.py`.
-
-**Lembrete:** projeções, não previsões. Não é aconselhamento financeiro, jurídico ou tributário.
+**Estudo completo:** documento "Estudo de viabilidade", gerado por `modelo_viabilidade.py`. Projeções, não previsões; não é aconselhamento financeiro, jurídico ou tributário.
 
 ## What the board said
 
@@ -264,16 +262,16 @@ Depois: arrependimento de compra que "parecia promoção"; sensação de venda d
 
 ## The numbers
 
-**Valores em reais (R$); a ferramenta imprime "$" no relatório abaixo, convertido para R$.** Este relatório usa o **cenário base** de `modelo_viabilidade.py`: dois canais (A ticket alto, B ticket baixo), 40% da audiência no A, comissão média ponderada de R$ 6,57 por compra e 15% de reserva para cancelamento. O estudo completo, com 24 meses e três cenários, está no documento "Estudo de viabilidade". A versão de um canal só está em `cfo-v1.md`.
-**Todos os números são estimativas minhas, sem dado real.** O tempo do fundador (15 h por semana, R$ 3.250 por mês) não está incluído.
+**Valores em reais (R$); a ferramenta imprime "$" no relatório abaixo, convertido para R$.** Cenário base de `modelo_viabilidade.py` com dois canais. Custos revisados em 13/11/2026: CNPJ/MEI gratuito, identidade visual feita com Claude, VPS e banco no Oracle Free Tier ou em máquina própria, ferramentas open source (todos a R$ 0). Restam dados de histórico de preço (R$ 100, estimativa), DAS do MEI (R$ 90, estimativa) e domínio (R$ 7, R$ 80 por ano). **O tempo do fundador não é contado, por decisão dele.** O estudo completo está no documento "Estudo de viabilidade"; as versões anteriores, em `cfo-v1.md` (um canal).
+**Todos os números são estimativas minhas, sem dado real.**
 
-- **A margem:** cada compra por link deixa **R$ 5,58** (85%) depois da reserva. A margem de lucro do mês 12 é de 11%.
-- **A linha a vigiar:** inscritos e receita por inscrito. O equilíbrio exige cerca de **4.600 inscritos** (a ferramenta arredonda para 3 compras por dia). Dobrar o crescimento de inscritos leva o caixa do mês 24 de R$ 3.740 para R$ 18.360; cortá-lo pela metade o leva a −R$ 3.570.
-- **A mistura de canais mexe pouco:** passar de 20% para 60% da audiência no canal A muda o caixa do mês 24 em R$ 1.891.
-- **Caixa:** o ponto mais fundo é **−R$ 3.687 (mês 11)**; o caixa volta a zero no mês 20 e o lucro mensal começa no mês 12. O ano 1 fecha em −R$ 2.822 de resultado operacional.
-- **Não gastar com anúncios no início:** a R$ 2,50 por inscrito, o caixa do mês 24 cai para −R$ 3.899.
-- **Condições financeiras do conselho:** confirmar comissões e cancelamento por escrito, e medir distribuição barata: **ainda não atendidas.**
-- Receita antes de impostos. Um contador deve conferir o enquadramento (o teto anual do MEI pode ser excedido no cenário otimista). Isto não é aconselhamento financeiro, jurídico ou tributário.
+- **Custo:** R$ 0 de partida e **R$ 197 por mês**.
+- **A margem:** cada compra por link deixa R$ 5,58 (85%); margem de 50% no mês 12.
+- **A linha a vigiar:** inscritos e receita por inscrito; o equilíbrio exige cerca de 2.200 inscritos.
+- **Caixa:** o ponto mais fundo é **−R$ 831 (mês 7)**; o lucro mensal começa no mês 8 e o caixa volta a zero no mês 13. O ano 1 fecha em −R$ 146 de resultado operacional (por isso o veredito calculado ainda é "Ainda não", por pouco).
+- **Dados de preço:** se o histórico for construído com as APIs das lojas, o custo fixo cai a R$ 97 e o caixa do mês 24 sobe de R$ 9.892 para R$ 12.292.
+- **Oracle Free Tier:** contas e instâncias gratuitas podem ser suspensas; manter backup e uma máquina própria como plano B.
+- Receita antes de impostos; um contador deve conferir o enquadramento (o teto anual do MEI pode ser excedido no cenário otimista). Não é aconselhamento financeiro, jurídico ou tributário.
 
 ---
 
@@ -291,45 +289,45 @@ Every number below comes from the input file. Nothing is looked up or guessed.
 
 ### The margin that matters
 
-Fixed costs: R$420 a month (VPS e banco de dados (ESTIMATIVA) R$100, Dados de histórico de preço (ESTIMATIVA) R$100, Ferramentas de arte e agendamento (ESTIMATIVA) R$100, Domínio e encurtador (ESTIMATIVA) R$30, Contador / DAS de MEI (ESTIMATIVA) R$90).
+Fixed costs: R$197 a month (Dados de histórico de preço (ESTIMATIVA) R$100, Domínio (RR$ 80 por ano, diluído) (ESTIMATIVA) R$7, DAS do MEI (ESTIMATIVA) R$90).
 
-- **Break-even: 3 compra por links a day.** Below that you lose money every month.
-- **Profit margin at your plan** (3 a day): **11%** of every sale, after every cost.
+- **Break-even: 2 compra por links a day.** Below that you lose money every month.
+- **Profit margin at your plan** (3 a day): **50%** of every sale, after every cost.
 
 ### Year 1, month by month
 
-| month | compra por links a day | revenue | profit | cumulative (after R$800 startup) |
+| month | compra por links a day | revenue | profit | cumulative (after R$0 startup) |
 | ---: | ---: | ---: | ---: | ---: |
-| 1 | 0 | R$16 | -R$407 | -R$1,207 |
-| 2 | 0 | R$35 | -R$390 | -R$1,596 |
-| 3 | 0 | R$57 | -R$371 | -R$1,968 |
-| 4 | 0 | R$83 | -R$350 | -R$2,318 |
-| 5 | 1 | R$112 | -R$325 | -R$2,642 |
-| 6 | 1 | R$150 | -R$293 | -R$2,935 |
-| 7 | 1 | R$193 | -R$256 | -R$3,191 |
-| 8 | 1 | R$244 | -R$212 | -R$3,403 |
-| 9 | 2 | R$306 | -R$161 | -R$3,564 |
-| 10 | 2 | R$378 | -R$99 | -R$3,662 |
-| 11 | 2 | R$465 | -R$25 | -R$3,687 |
-| 12 | 3 | R$572 | R$65 | -R$3,622 |
+| 1 | 0 | R$16 | -R$184 | -R$184 |
+| 2 | 0 | R$35 | -R$167 | -R$350 |
+| 3 | 0 | R$57 | -R$148 | -R$499 |
+| 4 | 0 | R$83 | -R$127 | -R$626 |
+| 5 | 1 | R$112 | -R$102 | -R$727 |
+| 6 | 1 | R$150 | -R$70 | -R$797 |
+| 7 | 1 | R$193 | -R$33 | -R$830 |
+| 8 | 1 | R$244 | R$11 | -R$819 |
+| 9 | 2 | R$306 | R$62 | -R$757 |
+| 10 | 2 | R$378 | R$124 | -R$632 |
+| 11 | 2 | R$465 | R$198 | -R$434 |
+| 12 | 3 | R$572 | R$288 | -R$146 |
 
-- **Year 1 operating profit: -R$2,822** on R$2,612 of revenue.
-- After the R$800 startup spend: -R$3,622.
+- **Year 1 operating profit: -R$146** on R$2,612 of revenue.
+- After the R$0 startup spend: -R$146.
 - Startup money earned back: not within year 1.
-- Cash you need before it pays for itself: **R$3,687**.
+- Cash you need before it pays for itself: **R$830**.
 
 ### What if
 
 | scenario | margin at plan | break-even a day | year 1 profit |
 | --- | ---: | ---: | ---: |
-| Base plan | 11% | 3 | -R$2,822 |
-| Price -10% | 2% | 3 | -R$3,083 |
-| Volume -20% | -7% | 3 | -R$3,266 |
-| Unit costs +15% | 9% | 3 | -R$2,881 |
+| Base plan | 50% | 2 | -R$146 |
+| Price -10% | 45% | 2 | -R$407 |
+| Volume -20% | 42% | 2 | -R$590 |
+| Unit costs +15% | 48% | 2 | -R$205 |
 
 ### Red flags
 
-- Year 1 loses money on operations (-R$2,822).
+- Year 1 loses money on operations (-R$146).
 - The startup spend is not earned back within year 1.
 
 ## Marketing
