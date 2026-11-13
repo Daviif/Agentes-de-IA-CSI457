@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "Entrar é grátis e mostrar o menor preço dos últimos meses ajuda a saber se a promoção é real, porque já me arrependi de compra que parecia promoção. Se aparecer algo que eu já queria, compro uma vez pelo link.",
+  "objection": "Medo de a oferta acabar quando eu clicar e eu perder tempo, e de a promoção não ser tão boa quanto parece. Também prefiro WhatsApp, o Telegram eu quase não abro.",
+  "would_change_my_mind": "Ter o canal também no WhatsApp, ou ver que o post é atualizado rápido quando a oferta acaba.",
+  "price_too_cheap": 15,
+  "price_cheap": 80,
+  "price_expensive": 300,
+  "price_too_expensive": 700
+}

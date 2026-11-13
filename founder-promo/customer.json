@@ -1,0 +1,37 @@
+{
+  "business": "Canal de promoções no Telegram (nicho tecnologia e casa), grátis, com links de afiliado",
+  "target": "Brasileiros que compram pela internet e gostam de pagar menos, que podem entrar num canal de ofertas do Telegram. Todos os valores estão em reais (R$) e a renda anual é a sua, em reais",
+  "where": "Brasil, compra online em Mercado Livre, Shopee, Amazon e Magalu",
+  "age": [18, 55],
+  "segments": [
+    {"name": "Jovem, 18 a 25, estudante ou primeiro emprego", "share": 0.35, "income": [14000, 42000]},
+    {"name": "Adulto, 26 a 40, renda média, família ou casa nova", "share": 0.40, "income": [42000, 96000]},
+    {"name": "Adulto, 41 a 55, renda média alta, compra para casa e trabalho", "share": 0.25, "income": [96000, 180000]}
+  ],
+  "behaviours": [
+    {"name": "Caçador de promoção assíduo", "share": 0.18, "how": "Já está em vários grupos e apps de ofertas e olha todo dia."},
+    {"name": "Só na Black Friday", "share": 0.20, "how": "Procura promoção em datas grandes, no resto do ano compra sem pesquisar."},
+    {"name": "Confere o histórico de preço", "share": 0.15, "how": "Abre o histórico antes de comprar e desconfia de desconto inflado."},
+    {"name": "Compra por impulso", "share": 0.15, "how": "Se vê uma oferta boa na hora, compra; depois pesquisa."},
+    {"name": "Vive no WhatsApp", "share": 0.15, "how": "Usa WhatsApp para tudo e quase não abre o Telegram."},
+    {"name": "Cético com afiliado", "share": 0.10, "how": "Acha que todo canal de oferta só quer ganhar comissão e desconfia dos links."},
+    {"name": "Odeia notificação", "share": 0.07, "how": "Silencia tudo; qualquer canal com muitas mensagens é silenciado em um dia."}
+  ],
+  "objections": [
+    "Já estou em grupos de promoção, não preciso de mais um",
+    "Quase não uso Telegram",
+    "Vai encher meu celular de notificação",
+    "Promoção de canal é desconto inflado para ganhar comissão",
+    "Prefiro ver o histórico de preço eu mesmo",
+    "Se a oferta acabar quando eu clicar, perco tempo",
+    "Não conheço quem está por trás do canal",
+    "Não compro tecnologia ou casa com frequência"
+  ],
+  "habits": [
+    "você confere o preço no Zoom ou no Buscapé antes de comprar",
+    "você já se arrependeu de uma compra que parecia promoção",
+    "você participa de um grupo de ofertas no WhatsApp que silenciou",
+    "você compra no Mercado Livre e na Shopee quase todo mês",
+    "você abre o Pelando ou o Promobit quando quer comprar algo grande"
+  ]
+}

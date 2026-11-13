@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "Entrar eu até entro, não custa nada, mas comprar por link de canal não. Eu só compro na Black Friday e já confiro no Zoom ou no Buscapé, então não preciso de outro intermediário.",
+  "objection": "Canal que ganha comissão tem interesse em me empurrar compra, e o 'menor preço dos últimos meses' é o canal quem diz. Prefiro conferir o preço eu mesmo.",
+  "would_change_my_mind": "Ver o canal acertar na Black Friday, com preço igual ou menor que no Zoom e no Buscapé, em uma compra que eu já queria fazer.",
+  "price_too_cheap": 0,
+  "price_cheap": 0,
+  "price_expensive": 5,
+  "price_too_expensive": 10
+}

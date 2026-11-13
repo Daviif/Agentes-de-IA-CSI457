@@ -1,0 +1,222 @@
+[
+ {
+  "id": "P001",
+  "name": "Dana",
+  "age": 54,
+  "segment": "Adulto, 41 a 55, renda média alta, compra para casa e trabalho",
+  "income": 124000,
+  "behaviour": "Compra por impulso",
+  "behaviour_how": "Se vê uma oferta boa na hora, compra; depois pesquisa.",
+  "objection": "Se a oferta acabar quando eu clicar, perco tempo",
+  "habit": "você participa de um grupo de ofertas no WhatsApp que silenciou"
+ },
+ {
+  "id": "P002",
+  "name": "Sofia",
+  "age": 37,
+  "segment": "Jovem, 18 a 25, estudante ou primeiro emprego",
+  "income": 37000,
+  "behaviour": "Vive no WhatsApp",
+  "behaviour_how": "Usa WhatsApp para tudo e quase não abre o Telegram.",
+  "objection": "Se a oferta acabar quando eu clicar, perco tempo",
+  "habit": "você já se arrependeu de uma compra que parecia promoção"
+ },
+ {
+  "id": "P003",
+  "name": "Yara",
+  "age": 31,
+  "segment": "Jovem, 18 a 25, estudante ou primeiro emprego",
+  "income": 24000,
+  "behaviour": "Vive no WhatsApp",
+  "behaviour_how": "Usa WhatsApp para tudo e quase não abre o Telegram.",
+  "objection": "Prefiro ver o histórico de preço eu mesmo",
+  "habit": "você já se arrependeu de uma compra que parecia promoção"
+ },
+ {
+  "id": "P004",
+  "name": "Jasper",
+  "age": 48,
+  "segment": "Jovem, 18 a 25, estudante ou primeiro emprego",
+  "income": 20000,
+  "behaviour": "Só na Black Friday",
+  "behaviour_how": "Procura promoção em datas grandes, no resto do ano compra sem pesquisar.",
+  "objection": "Promoção de canal é desconto inflado para ganhar comissão",
+  "habit": "você confere o preço no Zoom ou no Buscapé antes de comprar"
+ },
+ {
+  "id": "P005",
+  "name": "Gabriel",
+  "age": 32,
+  "segment": "Jovem, 18 a 25, estudante ou primeiro emprego",
+  "income": 23000,
+  "behaviour": "Odeia notificação",
+  "behaviour_how": "Silencia tudo; qualquer canal com muitas mensagens é silenciado em um dia.",
+  "objection": "Vai encher meu celular de notificação",
+  "habit": "você abre o Pelando ou o Promobit quando quer comprar algo grande"
+ },
+ {
+  "id": "P006",
+  "name": "Sienna",
+  "age": 26,
+  "segment": "Adulto, 26 a 40, renda média, família ou casa nova",
+  "income": 83000,
+  "behaviour": "Só na Black Friday",
+  "behaviour_how": "Procura promoção em datas grandes, no resto do ano compra sem pesquisar.",
+  "objection": "Já estou em grupos de promoção, não preciso de mais um",
+  "habit": "você já se arrependeu de uma compra que parecia promoção"
+ },
+ {
+  "id": "P007",
+  "name": "Rosa",
+  "age": 19,
+  "segment": "Adulto, 41 a 55, renda média alta, compra para casa e trabalho",
+  "income": 111000,
+  "behaviour": "Confere o histórico de preço",
+  "behaviour_how": "Abre o histórico antes de comprar e desconfia de desconto inflado.",
+  "objection": "Não compro tecnologia ou casa com frequência",
+  "habit": "você participa de um grupo de ofertas no WhatsApp que silenciou"
+ },
+ {
+  "id": "P008",
+  "name": "Julian",
+  "age": 50,
+  "segment": "Adulto, 26 a 40, renda média, família ou casa nova",
+  "income": 89000,
+  "behaviour": "Caçador de promoção assíduo",
+  "behaviour_how": "Já está em vários grupos e apps de ofertas e olha todo dia.",
+  "objection": "Já estou em grupos de promoção, não preciso de mais um",
+  "habit": "você abre o Pelando ou o Promobit quando quer comprar algo grande"
+ },
+ {
+  "id": "P009",
+  "name": "Idris",
+  "age": 27,
+  "segment": "Adulto, 26 a 40, renda média, família ou casa nova",
+  "income": 92000,
+  "behaviour": "Só na Black Friday",
+  "behaviour_how": "Procura promoção em datas grandes, no resto do ano compra sem pesquisar.",
+  "objection": "Promoção de canal é desconto inflado para ganhar comissão",
+  "habit": "você já se arrependeu de uma compra que parecia promoção"
+ },
+ {
+  "id": "P010",
+  "name": "Ivy",
+  "age": 32,
+  "segment": "Jovem, 18 a 25, estudante ou primeiro emprego",
+  "income": 23000,
+  "behaviour": "Caçador de promoção assíduo",
+  "behaviour_how": "Já está em vários grupos e apps de ofertas e olha todo dia.",
+  "objection": "Já estou em grupos de promoção, não preciso de mais um",
+  "habit": "você confere o preço no Zoom ou no Buscapé antes de comprar"
+ },
+ {
+  "id": "P011",
+  "name": "Malik",
+  "age": 18,
+  "segment": "Adulto, 26 a 40, renda média, família ou casa nova",
+  "income": 91000,
+  "behaviour": "Só na Black Friday",
+  "behaviour_how": "Procura promoção em datas grandes, no resto do ano compra sem pesquisar.",
+  "objection": "Vai encher meu celular de notificação",
+  "habit": "você abre o Pelando ou o Promobit quando quer comprar algo grande"
+ },
+ {
+  "id": "P012",
+  "name": "Quinn",
+  "age": 53,
+  "segment": "Jovem, 18 a 25, estudante ou primeiro emprego",
+  "income": 24000,
+  "behaviour": "Confere o histórico de preço",
+  "behaviour_how": "Abre o histórico antes de comprar e desconfia de desconto inflado.",
+  "objection": "Já estou em grupos de promoção, não preciso de mais um",
+  "habit": "você participa de um grupo de ofertas no WhatsApp que silenciou"
+ },
+ {
+  "id": "P013",
+  "name": "Theo",
+  "age": 45,
+  "segment": "Adulto, 41 a 55, renda média alta, compra para casa e trabalho",
+  "income": 142000,
+  "behaviour": "Confere o histórico de preço",
+  "behaviour_how": "Abre o histórico antes de comprar e desconfia de desconto inflado.",
+  "objection": "Não conheço quem está por trás do canal",
+  "habit": "você abre o Pelando ou o Promobit quando quer comprar algo grande"
+ },
+ {
+  "id": "P014",
+  "name": "Rafael",
+  "age": 37,
+  "segment": "Adulto, 41 a 55, renda média alta, compra para casa e trabalho",
+  "income": 121000,
+  "behaviour": "Vive no WhatsApp",
+  "behaviour_how": "Usa WhatsApp para tudo e quase não abre o Telegram.",
+  "objection": "Prefiro ver o histórico de preço eu mesmo",
+  "habit": "você participa de um grupo de ofertas no WhatsApp que silenciou"
+ },
+ {
+  "id": "P015",
+  "name": "Jordan",
+  "age": 48,
+  "segment": "Adulto, 26 a 40, renda média, família ou casa nova",
+  "income": 94000,
+  "behaviour": "Caçador de promoção assíduo",
+  "behaviour_how": "Já está em vários grupos e apps de ofertas e olha todo dia.",
+  "objection": "Já estou em grupos de promoção, não preciso de mais um",
+  "habit": "você participa de um grupo de ofertas no WhatsApp que silenciou"
+ },
+ {
+  "id": "P016",
+  "name": "Keisha",
+  "age": 35,
+  "segment": "Adulto, 26 a 40, renda média, família ou casa nova",
+  "income": 66000,
+  "behaviour": "Cético com afiliado",
+  "behaviour_how": "Acha que todo canal de oferta só quer ganhar comissão e desconfia dos links.",
+  "objection": "Promoção de canal é desconto inflado para ganhar comissão",
+  "habit": "você confere o preço no Zoom ou no Buscapé antes de comprar"
+ },
+ {
+  "id": "P017",
+  "name": "Wes",
+  "age": 35,
+  "segment": "Adulto, 41 a 55, renda média alta, compra para casa e trabalho",
+  "income": 144000,
+  "behaviour": "Compra por impulso",
+  "behaviour_how": "Se vê uma oferta boa na hora, compra; depois pesquisa.",
+  "objection": "Se a oferta acabar quando eu clicar, perco tempo",
+  "habit": "você abre o Pelando ou o Promobit quando quer comprar algo grande"
+ },
+ {
+  "id": "P018",
+  "name": "Tess",
+  "age": 24,
+  "segment": "Adulto, 26 a 40, renda média, família ou casa nova",
+  "income": 93000,
+  "behaviour": "Caçador de promoção assíduo",
+  "behaviour_how": "Já está em vários grupos e apps de ofertas e olha todo dia.",
+  "objection": "Se a oferta acabar quando eu clicar, perco tempo",
+  "habit": "você participa de um grupo de ofertas no WhatsApp que silenciou"
+ },
+ {
+  "id": "P019",
+  "name": "June",
+  "age": 18,
+  "segment": "Adulto, 26 a 40, renda média, família ou casa nova",
+  "income": 56000,
+  "behaviour": "Compra por impulso",
+  "behaviour_how": "Se vê uma oferta boa na hora, compra; depois pesquisa.",
+  "objection": "Vai encher meu celular de notificação",
+  "habit": "você participa de um grupo de ofertas no WhatsApp que silenciou"
+ },
+ {
+  "id": "P020",
+  "name": "Mateo",
+  "age": 39,
+  "segment": "Jovem, 18 a 25, estudante ou primeiro emprego",
+  "income": 19000,
+  "behaviour": "Cético com afiliado",
+  "behaviour_how": "Acha que todo canal de oferta só quer ganhar comissão e desconfia dos links.",
+  "objection": "Não conheço quem está por trás do canal",
+  "habit": "você já se arrependeu de uma compra que parecia promoção"
+ }
+]

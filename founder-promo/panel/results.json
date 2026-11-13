@@ -1,0 +1,158 @@
+{
+ "business": "Canal de promoções no Telegram (nicho tecnologia e casa), grátis, com links de afiliado",
+ "seed": 303359,
+ "dealt": 20,
+ "answered": 20,
+ "skipped": [],
+ "buys": 9,
+ "passes": 11,
+ "buy_rate": 0.45,
+ "by_segment": [
+  [
+   "Adulto, 41 a 55, renda média alta, compra para casa e trabalho",
+   5,
+   0.6
+  ],
+  [
+   "Adulto, 26 a 40, renda média, família ou casa nova",
+   8,
+   0.5
+  ],
+  [
+   "Jovem, 18 a 25, estudante ou primeiro emprego",
+   7,
+   0.2857142857142857
+  ]
+ ],
+ "by_behaviour": [
+  [
+   "Compra por impulso",
+   3,
+   1.0
+  ],
+  [
+   "Odeia notificação",
+   1,
+   1.0
+  ],
+  [
+   "Só na Black Friday",
+   4,
+   0.5
+  ],
+  [
+   "Vive no WhatsApp",
+   3,
+   0.3333333333333333
+  ],
+  [
+   "Confere o histórico de preço",
+   3,
+   0.3333333333333333
+  ],
+  [
+   "Caçador de promoção assíduo",
+   4,
+   0.25
+  ],
+  [
+   "Cético com afiliado",
+   2,
+   0.0
+  ]
+ ],
+ "by_income": [
+  [
+   "$93,000 and up",
+   7,
+   0.5714285714285714
+  ],
+  [
+   "$37,000 to $93,000",
+   7,
+   0.5714285714285714
+  ],
+  [
+   "under $37,000",
+   6,
+   0.16666666666666666
+  ]
+ ],
+ "why_not": [
+  [
+   "habit",
+   7,
+   [
+    "Eu vivo no WhatsApp e quase não abro o Telegram, então não ia ver os posts. Já me arrependi de compra que parecia promoção e prefiro conferir o histórico de preço eu mesma.",
+    "Eu só compro de verdade na Black Friday e já estou em uns grupos de promoção, então outro canal só ia me dar mais notificação. Entrar de graça eu até entro, mas comprar por ele num mês normal, não."
+   ],
+   [
+    "P003",
+    "P006"
+   ]
+  ],
+  [
+   "trust",
+   3,
+   [
+    "Entrar eu até entro, não custa nada, mas comprar por link de canal não. Eu só compro na Black Friday e já confiro no Zoom ou no Buscapé, então não preciso de outro intermediário.",
+    "Entrar não custa nada, até posso entrar pra olhar, mas eu sempre confiro o preço no Zoom e no Buscapé antes de comprar e não compro pelo link de um canal que ganha comissão. Já vi muita 'promoção' que era desconto inflado."
+   ],
+   [
+    "P004",
+    "P016"
+   ]
+  ],
+  [
+   "need",
+   1,
+   [
+    "Entrar eu entraria, é grátis e mostrar o menor preço dos últimos meses é o que eu mesma confiro. Mas não compro tecnologia ou casa com frequência, então num mês normal provavelmente não aparece nada que eu precise."
+   ],
+   [
+    "P007"
+   ]
+  ]
+ ],
+ "why_yes": [
+  [
+   "trust",
+   7,
+   [
+    "Entrar não custa nada e o limite de 8 posts com o menor preço dos últimos meses me atrai mais do que os grupos de WhatsApp que silenciei. Se aparecer algo que eu já queria com preço realmente baixo, compro na hora, mas uma vez no mês, não mais.",
+    "Entrar é grátis e mostrar o menor preço dos últimos meses ajuda a saber se a promoção é real, porque já me arrependi de compra que parecia promoção. Se aparecer algo que eu já queria, compro uma vez pelo link."
+   ],
+   [
+    "P001",
+    "P002"
+   ]
+  ],
+  [
+   "price",
+   2,
+   [
+    "Entrar é grátis e já abro o Pelando quando quero comprar algo grande, então um canal que mostra o menor preço dos últimos meses no post me poupa pesquisa. Compro por impulso, então se vejo um bom desconto com histórico ao lado, clico e compro.",
+    "Entrar é de graça e mostrar o menor preço dos últimos meses me ajuda, porque eu compro por impulso e só depois pesquiso. Se aparecer algo que eu já queria para a casa nova com desconto de verdade, eu pego."
+   ],
+   [
+    "P017",
+    "P019"
+   ]
+  ]
+ ],
+ "flip": [
+  "Ter o canal no WhatsApp e o post trazer o link do histórico de preço de uma fonte independente, para eu conferir em um clique.",
+  "Ver o canal acertar na Black Friday, com preço igual ou menor que no Zoom e no Buscapé, em uma compra que eu já queria fazer.",
+  "Ver o canal acertando em alguns posts de produtos que eu já queria comprar, com o histórico de preço conferindo no site, antes da Black Friday.",
+  "Poder pedir aviso só dos produtos que estou de olho, com alerta quando chegarem ao menor preço do histórico.",
+  "Provar que posta ofertas antes do Pelando e do Promobit e que o histórico de preço mostrado é correto, com alguns posts que eu confira e que realmente fossem o menor preço.",
+  "Ver o canal postando ofertas que eu não vi em nenhum outro grupo, ou com antecedência clara, e provar que o menor preço mostrado bate com o Zoom.",
+  "Ver nos primeiros posts que o preço mostrado bate com o histórico que eu mesmo confiro, e que o canal tem poucos posts de verdade, só os que valem a pena.",
+  "Ter o mesmo canal no WhatsApp, com o link do histórico de preço de terceiros no post para eu conferir.",
+  "Se o canal mostrasse ofertas que eu não vejo nos outros grupos, com o histórico de preço de verdade, e eu visse isso por algumas semanas, eu poderia comprar por um link dele.",
+  "Ver que o menor preço mostrado no post bate com o histórico no Zoom/Buscapé em várias ofertas seguidas, de forma que eu consiga conferir sozinha.",
+  "Ver o canal acertando preço em produtos que eu mesmo conferi por um tempo, com um histórico de preço que eu possa checar fora do post, e saber quem está por trás."
+ ],
+ "purchases_first_month_per_buyer": 1.1111111111111112,
+ "price_answers": 20
+}

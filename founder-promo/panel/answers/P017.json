@@ -1,0 +1,13 @@
+{
+  "id": "P017",
+  "buys": true,
+  "purchases_first_month": 2,
+  "reason_code": "price",
+  "reason": "Entrar é grátis e já abro o Pelando quando quero comprar algo grande, então um canal que mostra o menor preço dos últimos meses no post me poupa pesquisa. Compro por impulso, então se vejo um bom desconto com histórico ao lado, clico e compro.",
+  "objection": "Se a oferta acabar quando eu clicar, perco tempo. Também desconfio um pouco de canal que ganha comissão, mas se o preço é o mesmo e o histórico está no post, aceito.",
+  "would_change_my_mind": "",
+  "price_too_cheap": 0,
+  "price_cheap": 0,
+  "price_expensive": 0,
+  "price_too_expensive": 0
+}

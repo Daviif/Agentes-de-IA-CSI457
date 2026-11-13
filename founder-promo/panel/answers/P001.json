@@ -1,0 +1,13 @@
+{
+  "id": "P001",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "Entrar não custa nada e o limite de 8 posts com o menor preço dos últimos meses me atrai mais do que os grupos de WhatsApp que silenciei. Se aparecer algo que eu já queria com preço realmente baixo, compro na hora, mas uma vez no mês, não mais.",
+  "objection": "Se a oferta acabar quando eu clicar, perco tempo. E posso acabar silenciando o canal como fiz com o grupo do WhatsApp.",
+  "would_change_my_mind": "Ver nas primeiras semanas que as ofertas ainda estão valendo quando eu clico, e que o preço mostrado bate com o do site.",
+  "price_too_cheap": 80,
+  "price_cheap": 250,
+  "price_expensive": 900,
+  "price_too_expensive": 2500
+}

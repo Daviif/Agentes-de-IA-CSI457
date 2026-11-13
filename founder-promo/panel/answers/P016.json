@@ -1,0 +1,13 @@
+{
+  "id": "P016",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "Entrar não custa nada, até posso entrar pra olhar, mas eu sempre confiro o preço no Zoom e no Buscapé antes de comprar e não compro pelo link de um canal que ganha comissão. Já vi muita 'promoção' que era desconto inflado.",
+  "objection": "Todo canal de oferta só quer ganhar comissão e eu desconfio dos links; o 'menor preço dos últimos meses' é o canal que está dizendo, não eu que verifiquei.",
+  "would_change_my_mind": "Ver que o menor preço mostrado no post bate com o histórico no Zoom/Buscapé em várias ofertas seguidas, de forma que eu consiga conferir sozinha.",
+  "price_too_cheap": 0,
+  "price_cheap": 0,
+  "price_expensive": 1,
+  "price_too_expensive": 5
+}

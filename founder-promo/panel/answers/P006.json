@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "Eu só compro de verdade na Black Friday e já estou em uns grupos de promoção, então outro canal só ia me dar mais notificação. Entrar de graça eu até entro, mas comprar por ele num mês normal, não.",
+  "objection": "Já me arrependi de compra que parecia promoção. Mostrar o menor preço dos últimos meses ajuda, mas não sei se confio num canal que ganha comissão quando eu clico.",
+  "would_change_my_mind": "Ver o canal acertando em alguns posts de produtos que eu já queria comprar, com o histórico de preço conferindo no site, antes da Black Friday.",
+  "price_too_cheap": 2,
+  "price_cheap": 5,
+  "price_expensive": 15,
+  "price_too_expensive": 30
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P020",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "Entrar eu até entro, não custa nada, mas comprar por link de canal que eu não sei quem toca? Já me arrependi de promoção que parecia boa, então só compro se eu mesmo conferir o preço em outro lugar, e aí não uso o link.",
+  "objection": "Não conheço quem está por trás do canal. Eles avisam que ganham comissão, mas continuo achando que o interesse deles é me fazer clicar, e o 'menor preço dos últimos meses' é um dado que eu teria que acreditar na palavra.",
+  "would_change_my_mind": "Ver o canal acertando preço em produtos que eu mesmo conferi por um tempo, com um histórico de preço que eu possa checar fora do post, e saber quem está por trás.",
+  "price_too_cheap": 150,
+  "price_cheap": 300,
+  "price_expensive": 700,
+  "price_too_expensive": 1200
+}

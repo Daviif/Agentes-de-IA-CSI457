@@ -1,0 +1,13 @@
+{
+  "id": "P019",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "price",
+  "reason": "Entrar é de graça e mostrar o menor preço dos últimos meses me ajuda, porque eu compro por impulso e só depois pesquiso. Se aparecer algo que eu já queria para a casa nova com desconto de verdade, eu pego.",
+  "objection": "Vai encher meu celular de notificação, igual o grupo de WhatsApp que eu silenciei. Se eu silenciar o canal, nunca vejo a oferta na hora e não compro nada.",
+  "would_change_my_mind": "Poder receber só um resumo diário ou só as ofertas das categorias que eu escolho, sem notificação a cada post.",
+  "price_too_cheap": 15,
+  "price_cheap": 80,
+  "price_expensive": 450,
+  "price_too_expensive": 1000
+}

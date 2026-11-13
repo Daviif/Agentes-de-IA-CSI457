@@ -1,0 +1,13 @@
+{
+  "id": "P011",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "Entro porque é grátis e mostrar o menor preço dos últimos meses me ajuda a saber se a Black Friday é promoção de verdade. Só compraria uma vez, algo grande, perto da data.",
+  "objection": "Vai encher meu celular de notificação, mesmo com o limite de 8 posts por dia. Se encher, eu silencio ou saio.",
+  "would_change_my_mind": "Poder receber só as categorias que eu quero ou um resumo único por dia, em vez de 8 posts soltos.",
+  "price_too_cheap": 0,
+  "price_cheap": 0,
+  "price_expensive": 10,
+  "price_too_expensive": 30
+}

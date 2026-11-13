@@ -1,0 +1,13 @@
+{
+  "id": "P009",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "Entrar é grátis e mostrar o menor preço dos últimos meses é justamente o que me faltou quando me arrependi de uma promoção falsa. Se cair algo que eu já queria perto da Black Friday e o histórico bater, compro uma vez.",
+  "objection": "Todo canal de oferta diz que o preço é bom para ganhar comissão; só acredito se eu conseguir conferir o histórico por conta própria.",
+  "would_change_my_mind": "Ver algumas ofertas passadas em que o histórico mostrado bate com o que eu mesmo conferi em outro comparador de preços.",
+  "price_too_cheap": 0,
+  "price_cheap": 0,
+  "price_expensive": 0,
+  "price_too_expensive": 0
+}

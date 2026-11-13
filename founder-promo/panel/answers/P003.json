@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "Eu vivo no WhatsApp e quase não abro o Telegram, então não ia ver os posts. Já me arrependi de compra que parecia promoção e prefiro conferir o histórico de preço eu mesma.",
+  "objection": "Não vou confiar no 'menor preço dos últimos meses' que o próprio canal mostra, ainda mais sabendo que ele ganha comissão. Prefiro ver o histórico eu mesma.",
+  "would_change_my_mind": "Ter o canal no WhatsApp e o post trazer o link do histórico de preço de uma fonte independente, para eu conferir em um clique.",
+  "price_too_cheap": 2,
+  "price_cheap": 5,
+  "price_expensive": 15,
+  "price_too_expensive": 30
+}

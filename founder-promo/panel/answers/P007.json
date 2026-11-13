@@ -1,0 +1,13 @@
+{
+  "id": "P007",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Entrar eu entraria, é grátis e mostrar o menor preço dos últimos meses é o que eu mesma confiro. Mas não compro tecnologia ou casa com frequência, então num mês normal provavelmente não aparece nada que eu precise.",
+  "objection": "Já silenciei um grupo de ofertas no WhatsApp. Se virar mais um canal com notificação que eu ignoro, não adianta, e só compro quando tenho uma necessidade real.",
+  "would_change_my_mind": "Poder pedir aviso só dos produtos que estou de olho, com alerta quando chegarem ao menor preço do histórico.",
+  "price_too_cheap": 150,
+  "price_cheap": 400,
+  "price_expensive": 1200,
+  "price_too_expensive": 2500
+}

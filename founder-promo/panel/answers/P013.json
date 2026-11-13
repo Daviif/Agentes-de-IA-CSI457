@@ -1,0 +1,13 @@
+{
+  "id": "P013",
+  "buys": true,
+  "purchases_first_month": 1,
+  "reason_code": "trust",
+  "reason": "Entrar é grátis e mostrar o menor preço dos últimos meses é exatamente o que eu já faço na mão. Se aparecer algo que eu já queria e o histórico bater com o que eu conferir por fora, compro pelo link, mas não vou comprar por impulso.",
+  "objection": "Não conheço quem está por trás do canal. Quem ganha comissão tem interesse em me fazer clicar, e o histórico de preço que eles mostram pode ser recortado a favor deles.",
+  "would_change_my_mind": "Ver que o menor preço mostrado bate com o histórico de uma fonte independente em algumas ofertas, e saber quem opera o canal.",
+  "price_too_cheap": 0,
+  "price_cheap": 0,
+  "price_expensive": 15,
+  "price_too_expensive": 40
+}

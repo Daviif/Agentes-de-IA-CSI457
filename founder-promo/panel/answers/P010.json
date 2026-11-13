@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "Já estou em vários grupos e apps de oferta e confiro tudo no Zoom e no Buscapé antes de comprar, então um canal a mais não muda nada pra mim. Entrar é grátis, até posso entrar, mas não vou comprar por ele só por isso.",
+  "objection": "Já tenho grupos de promoção demais e já checo o histórico de preço sozinha, então não vejo o que esse canal faz que eu já não tenha.",
+  "would_change_my_mind": "Ver o canal postando ofertas que eu não vi em nenhum outro grupo, ou com antecedência clara, e provar que o menor preço mostrado bate com o Zoom.",
+  "price_too_cheap": 0,
+  "price_cheap": 0,
+  "price_expensive": 5,
+  "price_too_expensive": 15
+}
